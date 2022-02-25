@@ -1,572 +1,549 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="{% static 'css/boxicons.min.css">
-    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'%}"/>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <title>MMK Hotel Reservation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
 
-    <title>MMK Reservation System</title>
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.7.0
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="{% static 'img/logo-dark.svg'%}" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div data-aos="fade-in">
+        <div class="hero-logo">
+          <img class="" src="{% static 'assets/img/logo.png'%}" alt="Imperial">
+        </div>
+
+        <h1>Welcome to Imperial studios</h1>
+        <h2>We create <span class="typed" data-typed-items="beautiful graphics, functional websites, working mobile apps"></span></h2>
+        <div class="actions">
+          <a href="#about" class="btn-get-started">Get Strated</a>
+          <a href="#services" class="btn-services">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo.png'%}" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-                <button class="btn btn-primary ms-lg-3">Join Us</button>
-            </div>
-        </div>
-    </nav><!-- //NAVBAR -->
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-    <!-- HERO -->
-    <div class="hero vh-100 d-flex align-items-center" id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mx-auto text-center">
-                    <h1 class="display-4 text-white">Build robust landing pages now</h1>
-                    <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
-                        sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
-                    <a href="#" class="btn me-2 btn-primary">Get Started</a>
-                    <a href="#" class="btn btn-outline-light">My Portfolio</a>
-                </div>
-            </div>
-        </div>
-    </div><!-- //HERO -->
+    </div>
+  </header><!-- End Header -->
 
-    <!-- SERVICES -->
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">About Us</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+          </div>
+        </div>
+      </div>
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+
+          <div class="col-lg-6 about-img">
+            <img src="{% static 'assets/img/about-img.jpg'%}" alt="">
+          </div>
+
+          <div class="col-md-6 about-content">
+            <h2 class="about-title">We provide great services and ideass</h2>
+            <p class="about-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate
+            </p>
+            <p class="about-text">
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+              id est laborum
+            </p>
+            <p class="about-text">
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt molli.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
     <section id="services">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">SERIVCES</h6>
-                    <h1>Our Services</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect bounceInUp">
-                        <div class="iconbox">
-                            <i class='bx bxs-check-shield'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-comment-detail'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-cog'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-heart'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-rocket'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-doughnut-chart'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">Service</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-                            perferendis </p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-12">
+            <h3 class="section-title">Our Services</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+          </div>
         </div>
-    </section><!-- SERVICES -->
 
-    <!-- FEATURES -->
-    <section class="row w-100 py-0 bg-light" id="features">
-        <div class="col-lg-6 col-img"></div>
-        <div class="col-lg-6 py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 offset-md-1">
-                        <h6 class="text-primary">WHY TO CHOOES US</h6>
-                        <h1>Best solution for your business</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque
-                            fuga
-                            in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-
-                        <div class="feature d-flex mt-5">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-comment-edit'></i>
-                            </div>
-                            <div>
-                                <h5>Feature</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
-                            </div>
-                        </div>
-                        <div class="feature d-flex">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-user-circle'></i>
-                            </div>
-                            <div>
-                                <h5>Feature</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
-                            </div>
-                        </div>
-                        <div class="feature d-flex">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-download'></i>
-                            </div>
-                            <div>
-                                <h5>Feature</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-briefcase"></i></div>
+            <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
+            <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-card-checklist"></i></div>
+            <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
+            <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
+            <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-binoculars"></i></div>
+            <h4 class="service-title"><a href="">Magni Dolores</a></h4>
+            <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-brightness-high"></i></div>
+            <h4 class="service-title"><a href="">Nemo Enim</a></h4>
+            <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-calendar4-week"></i></div>
+            <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          </div>
         </div>
-    </section><!-- FEATURES -->
+      </div>
+    </section><!-- End Services Section -->
 
-    <!-- PROJECTS -->
+    <!-- ======= Subscrbe Section ======= -->
+    <section id="subscribe">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-8">
+            <h3 class="subscribe-title">Subscribe For Updates</h3>
+            <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+          </div>
+          <div class="col-md-4 subscribe-btn-container">
+            <a class="subscribe-btn" href="#">Subscribe Now</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Subscrbe Section -->
+
+    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio">
-        <div class="container-fluid">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">PROJECTS</h6>
-                    <h1>Our Recent Work</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro1.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro2.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro3.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro4.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro5.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="project">
-                        <img src="{% static 'img/pro6.jpg'%}" alt="">
-                        <div class="overlay">
-                            <div>
-                                <h4 class="text-white">Project Title</h4>
-                                <h6 class="text-white">Website Design</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Portfolio</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+          </div>
         </div>
-    </section><!-- PROJECTS -->
 
-    <!-- PRICING -->
-    <section id="pricing" class="bg-light">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">PRICING</h6>
-                    <h1>Our Fair & Simple Pricing</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$99</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$199</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$299</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$399</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
         </div>
-    </section><!-- PRICING -->
 
-    <!-- TEAM -->
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets/img/portfolio/portfolio-1.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-1.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets/img/portfolio/portfolio-2.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-2.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app'%}">
+            <img src="{% static 'assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-3.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets/img/portfolio/portfolio-4.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-4.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets/img/portfolio/portfolio-5.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-5.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-6.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-7.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets/img/portfolio/portfolio-8.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-8.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="{% static 'assets/img/portfolio/portfolio-9.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Testimonials</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Erdo lide, nora porodo filece, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static 'assets/img/client-1.jpg'%}" alt=""></div>
+              <h4>Saul Goodman</h4>
+              <span>Lawless Inc</span>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="quote">
+              <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="quote">
+              <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static 'assets/img/client-2.jpg'%}" alt=""></div>
+              <h4>Sara Wilsson</h4>
+              <span>Odeo Inc</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
     <section id="team">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">TEAM</h6>
-                    <h1>Meet Our Crew Members</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
-            </div>
-            <div class="row text-center g-4">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="{% static 'img/team1.jpg'%}" alt="">
-                        <h5 class="mb-0 mt-4">Sharbat Khan</h5>
-                        <p>Web Developer</p>
-                        <div class="social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="{% static 'img/team2.jpg'%}" alt="">
-                        <h5 class="mb-0 mt-4">Sharbat Khan</h5>
-                        <p>Web Developer</p>
-                        <div class="social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="{% static 'img/team3.jpg'%}" alt="">
-                        <h5 class="mb-0 mt-4">Sharbat Khan</h5>
-                        <p>Web Developer</p>
-                        <div class="social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="{% static 'img/team4.jpg'%}" alt="">
-                        <h5 class="mb-0 mt-4">Sharbat Khan</h5>
-                        <p>Web Developer</p>
-                        <div class="social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Our Team</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          </div>
         </div>
-    </section><!-- TEAM -->
 
-    <!-- BLOG -->
-    <section id="blog" class="bg-light">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">BLOG</h6>
-                    <h1>Latest News From The Blog</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/team-1.jpg'%}" alt=""></div>
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="{% static 'img/blog1.jpg'%}" alt="">
-                        <h5 class="mt-4"><a href="#">harum vitae debitis sapiente praesentium aperiam au</a></h5>
-                        <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="{% static 'img/blog2.jpg'%}" alt="">
-                        <h5 class="mt-4"><a href="#">harum vitae debitis sapiente praesentium aperiam au</a></h5>
-                        <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="{% static 'img/blog3.jpg'%}" alt="">
-                        <h5 class="mt-4"><a href="#">harum vitae debitis sapiente praesentium aperiam au</a></h5>
-                        <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet </p>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/team-2.jpg'%}" alt=""></div>
+              <h4>Sarah Jhinson</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/team-3.jpg'%}" alt=""></div>
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/team-4.jpg'%}" alt=""></div>
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
 
         </div>
-    </section><!-- BLOG -->
+      </div>
+    </section><!-- End Team Section -->
 
-    <!-- CONTACT -->
+    <!-- ======= Contact Section ======= -->
     <section id="contact">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">CONTACT</h6>
-                    <h1>Get In Touch</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
-                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
-                </div>
-            </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Contact Us</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          </div>
+        </div>
 
-            <form action="" class="row g-3 justify-content-center">
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Full Name">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div>
+                <i class="bi bi-envelope"></i>
+                <p>info@example.com</p>
+              </div>
+
+              <div>
+                <i class="bi bi-phone"></i>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Enter E-mail">
+                <div class="form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" placeholder="Enter Subject">
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
-                <div class="col-md-10">
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"
-                        placeholder="Enter Message"></textarea>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                 </div>
-                <div class="col-md-10 d-grid">
-                    <button class="btn btn-primary">Contact</button>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
-            </form>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
 
         </div>
-    </section><!-- CONTACT -->
+      </div>
+    </section><!-- End Contact Section -->
 
-    <footer>
-        <div class="footer-top">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-4">
-                        <img class="logo" src="{% static 'img/logo-white.svg'%}" alt="">
-                    </div>
-                    <div class="col-lg-2">
-                        <h5 class="text-white">Brand</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Pricing</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2">
-                        <h5 class="text-white">More</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">FAQ's</a></li>
-                            <li><a href="#">Privacy & Policy</a></li>
-                            <li><a href="#">Warranty</a></li>
-                            <li><a href="#">Shipment</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4">
-                        <h5 class="text-white">Contact</h5>
-                        <ul class="list-unstyled">
-                            <li>Address: 2715 Ash Dr. San Jose, South Dakota 83475</li>
-                            <li>Email: jackson.graham@example.com</li>
-                            <li>Phone: (603) 555-0123</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
         </div>
-        <div class="footer-bottom py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="mb-0">© 2020 copyright all right reserved | Designed with <i
-                            class="bx bx-heart text-danger"></i> by<a
-                                href="https://www.youtube.com/channel/UCYMEEnLzGGGIpQQ3Nu_sBsQ"
-                                class="text-white">SA7MAN</a></p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="{% static 'assets/vendor/typed.js/typed.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
 
-    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+
 </body>
+
 </html>

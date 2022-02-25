@@ -11,3 +11,7 @@ from django.core.mail import send_mail, BadHeaderError
 class Home(View):
     def get(self, request):
         return render(request,'index.html')
+
+class Portfolio(View):
+    def get(self, request):
+        return render(request,'portfolio-details.html')        

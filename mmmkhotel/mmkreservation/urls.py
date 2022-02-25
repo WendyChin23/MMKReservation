@@ -5,7 +5,8 @@ app_name = 'mmkreservation'
 
 urlpatterns= [
 	
-	path('', views.Home.as_view(), name="Home_view"),
+	path('Home', views.Home.as_view(), name="Home_view"),
+	path('portfolio', views.Portfolio.as_view(), name="portfolio_view"),
 
 	
 ]
