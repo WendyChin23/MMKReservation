@@ -512,7 +512,7 @@ section {
 /* Subscribe Section
 --------------------------------*/
 #subscribe {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/subscribe-bg.jpg) fixed center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/subscribe.jpg) fixed center center;
   background-size: cover;
   padding: 80px 0;
 }
@@ -683,12 +683,12 @@ section {
   text-align: center;
 }
 #testimonials .profile .pic {
-  border-radius: 50%;
-  border: 6px solid #fff;
-  margin-bottom: 15px;
-  overflow: hidden;
-  height: 260px;
-  width: 260px;
+  /* border-radius: 50%; */
+  /* border: 6px solid #fff; */
+  /* margin-bottom: 1px; */
+  /* overflow: hidden; */
+  height: 160px;
+  width: 160px;
 }
 #testimonials .profile .pic img {
   max-width: 100%;
