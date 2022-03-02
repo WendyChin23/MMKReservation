@@ -9,11 +9,17 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: #fff;
+  /* background: #fff; */
+  background-image: url('../../assets/img/room1.png');
   color: #666666;
   font-family: "Open Sans", sans-serif;
 }
-
+#bg{
+  background-size: 1800px 900px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+}
 a {
   text-decoration: none;
   color: #03C4EB;
