@@ -14,7 +14,7 @@ from django.core.exceptions import ValidationError
 # 		model = ContactMessage
 # 		fields= '__all__'
 
-class AccountUser(forms.ModelForm):
+class AccountForm(forms.ModelForm):
 	class Meta:
 		model = Account
 		fields= ['email' , 'username']
@@ -34,10 +34,10 @@ class AccountUser(forms.ModelForm):
 	# 		raise  ValidationError("Username already exists")
 	# 		return username   
 
-# class GradeForm(forms.ModelForm):
-# 	class Meta:
-# 		model = Grade 
-# 		fields= '__all__'      
+class RoomsForm(forms.ModelForm):
+	class Meta:
+		model = Rooms 
+		fields= '__all__'      
 
 # # class DonationForm(forms.ModelForm):
 # # 	class Meta:

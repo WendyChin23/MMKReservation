@@ -9,6 +9,9 @@ urlpatterns= [
 	path('portfolio', views.Portfolio.as_view(), name="portfolio_view"),
 	path('signup', views.Signup.as_view(), name="signup_view"),
 	path('login', views.Login.as_view(), name="login_view"),
+	path('adminpage', views.AdminPage.as_view(), name="admin_view"),
+	path('adminrooms', views.AdminRooms.as_view(), name="adminroom_view"),
+	path('adminaccounts', views.AdminAccountsDashboard.as_view(), name="adminaccounts_view"),
 
 	
 ]

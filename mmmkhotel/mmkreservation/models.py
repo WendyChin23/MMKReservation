@@ -12,7 +12,6 @@ class Account(models.Model):
     email = models.CharField(max_length = 50, unique = True)
     address = models.CharField(max_length=100)
     age = models.IntegerField()
-    birthdate = models.DateField()
     username = models.CharField(max_length = 100, unique = True)
     password = models.CharField(max_length = 50)
 
@@ -20,3 +19,11 @@ class Admin(models.Model):
     aid = models.AutoField(primary_key = True)
     username = models.CharField(max_length = 50)
     password = models.CharField(max_length = 30)
+
+class Rooms(models.Model):
+    rid = models.BigAutoField(primary_key = True)
+    time = models.DateTimeField(max_length = 50) #pwede ma unique, blank is equal to not required, Null is equal to null
+    date = models.DateTimeField(max_length = 50)
+    email = models.CharField(max_length = 50, unique = True)
+    day = models.CharField(max_length=100)
+    price = models.IntegerField()

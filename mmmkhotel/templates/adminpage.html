@@ -1,0 +1,183 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>DASHBOARD</title>
+      <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/css/bootstrap.min.css'%}">
+      <!----css3---->
+        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    
+    
+    <!--google fonts -->
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  
+  <!--google material icon-->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+
+  </head>
+  <body>
+  
+
+<div class="wrapper">
+
+
+        <div class="body-overlay"></div>
+    
+    <!-------------------------sidebar------------>
+         <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="{% static 'assets\img\logo1.png' %}" class="img-fluid"/><span>MMK HOTEL</span></h3>
+               {% for accountadmin in accountadmin %}
+                <p>{{accountadmin.username}}</p>
+                 {% endfor %} 
+                
+            </div>
+            <ul class="list-unstyled components">
+      <li  class="active">
+                    <a href="{% url 'mmkreservation:admin_view' %}" class="dashboard"><i class="material-icons">dashboard</i>
+          <span>HOME</span></a>
+                </li>
+    
+
+                <li class="dropdown">
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" 
+          class="dropdown-toggle">
+          <i class="material-icons">aspect_ratio</i>Account</a>
+                    <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                        <li>
+                            <a href="{% url 'mmkreservation:adminaccounts_view' %}">User</a>
+                        </li>
+                        
+                      
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{% url 'mmkreservation:adminroom_view' %}">
+                    <i class="material-icons">apps</i><span>Rooms</span></a>
+                   
+                </li>
+        
+        
+                <li class="dropdown">
+                  <a href="{% url 'mmkreservation:Home_view' %}">
+                  <i class="material-icons">apps</i><span>Donations</span></a>
+                 
+              </li>
+              <li class="dropdown">
+                <a href="{% url 'mmkreservation:login_view' %}">
+                <i class="material-icons">apps</i><span>Log Out</span></a>
+               
+            </li>
+        </nav>
+    
+    
+    
+    
+    <!--------page-content---------------->
+    
+    <div id="content">
+       
+       <!--top--navbar----design--------->
+       
+       <div class="top-navbar">
+          <div class="xp-topbar">
+
+                <!-- Start XP Row -->
+                <div class="row"> 
+                    <!-- Start XP Col -->
+                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
+                        <div class="xp-menubar">
+    
+                </a>
+                            </li>
+              
+                            <h2 class="ml-lg-2">DASHBOARD</h2>
+              
+                        </div>
+                   
+                    <!-- End XP Col -->
+
+                
+           
+     
+
+
+
+
+
+       
+       <!--------main-content------------->
+      
+   
+<!--           
+        <div class="col-md-12">
+        <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center">
+          <h2 class="ml-lg-2">DASHBOARD</h2>
+        
+      -->
+     
+      
+    
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+  
+  
+  
+  
+  
+  
+    
+       <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="{% static 'assets\js\js\jquery-3.3.1.slim.min.js' %}"></script>
+     <script src="{% static 'assets\js\js\popper.min.js' %}"></script>
+     <script src="{% static 'assets\js\js\bootstrap.min.js' %}"></script>
+     <script src="{% static 'assets\js\js\jquery-3.3.1.min.js' %}"></script>
+    
+    
+    <script type="text/javascript">
+          
+      $(document).ready(function(){
+        $(".xp-menubar").on('click',function(){
+          $('#sidebar').toggleClass('active');
+        $('#content').toggleClass('active');
+        });
+        
+         $(".xp-menubar,.body-overlay").on('click',function(){
+           $('#sidebar,.body-overlay').toggleClass('show-nav');
+         });
+        
+      });
+      
+  </script>
+    
+    
+  
+  
+    </body>
+    
+    </html>
+  
+  
+  
+  

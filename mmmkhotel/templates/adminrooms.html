@@ -1,0 +1,351 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>USER DASHBOARD</title>
+      <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/css/bootstrap.min.css'%}">
+      <!----css3---->
+        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    
+    
+    <!--google fonts -->
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  
+  <!--google material icon-->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+
+  </head>
+  <body>
+  
+
+<div class="wrapper">
+
+
+        <div class="body-overlay"></div>
+    
+    <!-------------------------sidebar------------>
+         <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="{% static 'assets\img\logo1.png' %}" class="img-fluid"/><span>MMK HOTEL</span></h3>
+               {% for accountadmin in accountadmin %}
+                <p>{{accountadmin.username}}</p>
+                 {% endfor %} 
+                
+            </div>
+            <ul class="list-unstyled components">
+                <li  class="active">
+                              <a href="{% url 'mmkreservation:admin_view' %}" class="dashboard"><i class="material-icons">dashboard</i>
+                    <span>HOME</span></a>
+                          </li>
+              
+          
+                          <li class="dropdown">
+                              <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" 
+                    class="dropdown-toggle">
+                    <i class="material-icons">aspect_ratio</i>Account</a>
+                              <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                                  <li>
+                                      <a href="{% url 'mmkreservation:adminaccounts_view' %}">User</a>
+                                  </li>
+                                  
+                                
+                              </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{% url 'mmkreservation:adminroom_view' %}">
+                    <i class="material-icons">apps</i><span>Rooms</span></a>
+                   
+                </li>
+        
+        
+                <li class="dropdown">
+                  <a href="{% url 'mmkreservation:Home_view' %}">
+                  <i class="material-icons">apps</i><span>Donations</span></a>
+                 
+              </li>
+              <li class="dropdown" class="active">
+                <a href="{% url 'mmkreservation:login_view' %}">
+                <i class="material-icons">apps</i><span>Log Out</span></a>
+               
+            </li>
+        </nav>
+    
+    
+    
+    
+    <!--------page-content---------------->
+    
+    <div id="content">
+       
+       <!--top--navbar----design--------->
+       
+       <div class="top-navbar">
+          <div class="xp-topbar">
+
+                <!-- Start XP Row -->
+                <div class="row"> 
+                    <!-- Start XP Col -->
+                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
+                        <div class="xp-menubar">
+    
+                </a>
+                            </li>
+              
+        
+              
+                        </div>
+                    </div>
+                    <!-- End XP Col -->
+
+                </div> 
+                <!-- End XP Row -->
+
+            </div>
+         <div class="xp-breadcrumbbar text-center">
+                <h4 class="page-title">ROOMS</h4>  
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">User</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+
+                  </ol>                
+            </div>
+      
+       </div>
+       
+       
+
+
+
+
+
+       
+       <!--------main-content------------->
+      
+       <div class="main-content">
+        <div class="row">
+          
+        <div class="col-md-12">
+        <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center">
+          <h2 class="ml-lg-2">View Rooms</h2>
+        </div>
+     
+     
+      </div>
+    </div>
+    {% block content %}
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>
+       
+          </th>
+          <th>Room ID</th> 
+          <th>Time</th> 
+          <th>Date</th> 
+          <th>Email</th> 
+          <th>Day</th>
+          <th>Price</th>
+          <th>Action</th> 
+        </tr>
+      </thead>
+      
+            {% for rooms in rooms %}
+            <tr>
+                <td>   
+                <td>{{rooms.rid}}</td> 
+                <td>{{rooms.time}}</td> 
+                <td>{{rooms.date}}</td> 
+                <td>{{rooms.email}}</td> 
+                <td>{{rooms.address}}</td> 
+                <td>{{rooms.day}}</td>
+                <td>{{rooms.price}}</td>
+
+                 
+                <td>
+                  
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- {{ form.non_field_errors }}
+                    {{ form.web_input }} -->
+                    <input type="text" name="usernamep" value="{{account.username}}" class="form-control" id="usernamep" hidden>
+                    <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Rooms</button>           
+                </form>
+                  
+                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{rooms.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
+
+                    <div class="modal fade" id="exampleModal-{{account.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
+                      <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>                              
+                              
+                              <div class="modal-body">
+                                <form method="POST">
+                                  {% csrf_token %}
+                                  <div class="form-group">
+                                
+                                 <label for="recipient-name" class="col-form-label">Order ID</label>
+                                <input name="uid-uid" value="{{rooms.rid}}" subject.type="text" class="form-control" id="uid-uid" readonly>
+
+                                  <label for="recipient-name" class="col-form-label">First Name</label>
+                                  <input type="text" name="first-name" value="{{rooms.time}}" class="form-control" id="first-name">
+                        
+                                  <label for="recipient-name" class="col-form-label">Last Name</label>
+                                  <input type="text" name="last-name" value="{{rooms.date}}" class="form-control" id="last-name">
+                                  <label for="recipient-name" class="col-form-label">Email</label>
+                                  <input type="text" name="email-email" value = "{{rooms.email}}" class="form-control" >
+                        
+                                  <label for="recipient-name" class="col-form-label">Address</label>
+                                  <input type="text" name="address-address" value="{{rooms.adress}}" class="form-control" id="address-address">
+
+                                  <label for="recipient-name" class="col-form-label">Day</label>
+                                  <input type="text" name="age-age" value="{{rooms.day}}" class="form-control" id-="age-age">
+
+                                  <label for="recipient-name" class="col-form-label">Price</label>
+                                   <input type="text" name="user-name" value="{{rooms.price}}" class="form-control" id=" user-name">
+
+                                  </div>
+                                
+                        
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="submit" id="BtnUpdate" name="BtnUpdate" href = "{% url 'mmkreservation:Home_view' %}" class="btn btn-primary">UPDATE</button>
+                              </div>
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <!-- Button trigger modal -->
+  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{rooms.rid}}"data-toggle="modal">DELETE</a>
+    </div>
+                          
+                         <!-- Modal HTML -->
+<div id="Modal-{{rooms.rid}}" class="modal fade" data-backdrop="false">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="icon-box">
+          <i class="material-icons">&#xE5CD;</i>
+        </div>        
+        <h4 class="modal-title">Are you sure?</h4>  
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <form method="POST">
+          {% csrf_token %}
+
+      <div class="modal-body">
+        <input type="text" name="iidn-idn" value = {{rooms.rid}} hidden>
+        Are you sure you want to delete
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+        <button type="submit" id="BtnDelete" name="BtnDelete" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+    {% endfor %}  
+</div>  
+                </td> 
+             </tr>
+                      
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+   
+
+  
+    
+{% endblock content %}
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>MMK Hotel</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">MMK HOTEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer --
+
+
+
+
+
+  
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="{% static 'assets\js\js\jquery-3.3.1.slim.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\popper.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\bootstrap.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\jquery-3.3.1.min.js' %}"></script>
+  
+  
+  <script type="text/javascript">
+        
+    $(document).ready(function(){
+      $(".xp-menubar").on('click',function(){
+        $('#sidebar').toggleClass('active');
+      $('#content').toggleClass('active');
+      });
+      
+       $(".xp-menubar,.body-overlay").on('click',function(){
+         $('#sidebar,.body-overlay').toggleClass('show-nav');
+       });
+      
+    });
+    
+</script>
+  
+  
+
+
+  </body>
+  
+  </html>
+
+
+
