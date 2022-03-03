@@ -6,7 +6,7 @@ from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
 from mmkreservation.forms import AccountForm, RoomForm
 
-from mmkreservation.models import Account, Admin
+from mmkreservation.models import Account, Admin, Rooms
 
 
 # Create your views here.
@@ -29,7 +29,7 @@ class Signup(View):
     def get(self, request):
         return render(request,'signup.html')
 
-class Rooms(View):
+class Roomss(View):
     def get(self, request):
         return render(request,'rooms.html')
 
@@ -201,9 +201,9 @@ class Roomss(View):
             Date = request.POST.get("date")
             Email = request.POST.get("email")
             Day = request.POST.get("day")
-            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
+            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day,)
             print('clicked')
-            form.save()
+            form.save() 
 
 
             return redirect('mmkreservation:adminroom_view')
@@ -222,10 +222,10 @@ class AdminRoomsDashboard(View):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            roomss = Rooms.objects.all()
+            roomsss = Rooms.objects.all()
        
         context = {
-            'roomss' : roomss,
+            'roomsss' : roomsss,
             'accountadmin':accountadmin, #name that we want to use
             
         }
