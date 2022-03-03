@@ -113,11 +113,10 @@
 
             </div>
          <div class="xp-breadcrumbbar text-center">
-                <h4 class="page-title">ROOMS</h4>  
+                <h4 class="page-title">Account</h4>  
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">User</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-
                   </ol>                
             </div>
       
@@ -139,7 +138,7 @@
     <div class="table-title">
       <div class="row">
         <div class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center">
-          <h2 class="ml-lg-2">View Rooms</h2>
+          <h2 class="ml-lg-2">View Users</h2>
         </div>
      
      
@@ -152,40 +151,39 @@
           <th>
        
           </th>
-          <th>Room ID</th> 
+          <th>Order ID</th> 
           <th>Room Type</th> 
           <th>Date</th> 
           <th>Email</th> 
           <th>Day</th>
-    
+        
           <th>Action</th> 
         </tr>
       </thead>
       
-            {% for roomsss in roomsss %}
+            {% for roomm in roomm %}
             <tr>
                 <td>   
-                <td>{{roomsss.rid}}</td> 
-                <td>{{roomsss.roomtype}}</td> 
-                <td>{{roomsss.date}}</td> 
-                <td>{{roomsss.email}}</td> 
-                <td>{{roomsss.day}}</td>
-              
+                <td>{{roomm.rid}}</td> 
+                <td>{{roomm.roomtype}}</td> 
+                <td>{{roomm.date}}</td> 
+                <td>{{roomm.email}}</td> 
+                <td>{{roomm.day}}</td> 
 
-                 
+            
                 <td>
                   
                 <form method="POST">
                     {% csrf_token %}
                     <!-- {{ form.non_field_errors }}
                     {{ form.web_input }} -->
-                    <input type="text" name="usernamep" value="{{account.username}}" class="form-control" id="usernamep" hidden>
-                    <!-- <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Rooms</button>            -->
+                    <!-- <input type="text" name="usernamep" value="{{roomsss.username}}" class="form-control" id="username" hidden> -->
+                    <!-- <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Grades</button>            -->
                 </form>
                   
-                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{roomsss.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
+                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{roomm.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
 
-                    <div class="modal fade" id="exampleModal-{{roomsss.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
+                    <div class="modal fade" id="exampleModal-{{roomm.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
                       <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -201,23 +199,23 @@
                                   <div class="form-group">
                                 
                                  <label for="recipient-name" class="col-form-label">Order ID</label>
-                                <input name="rid-rid" value="{{roomsss.rid}}" subject.type="text" class="form-control" id="rid-rid" readonly>
+                                <input name="rid-rid" value="{{roomm.rid}}" subject.type="text" class="form-control" id="rid-rid" readonly>
 
-                                  <label for="recipient-name" class="col-form-label">Roomtype</label>
-                                  <input type="text" name="roomtype" value="{{roomsss.time}}" class="form-control" id="roomtype">
+                                  <label for="recipient-name" class="col-form-label">Room Type </label>
+                                  <input type="text" name="roomtype" value="{{roomm.roomtype}}" class="form-control" id="roomtype">
                         
-
                                   <label for="recipient-name" class="col-form-label">Date</label>
-                                  <input type="date" name="date-date" value="{{roomsss.birthdate|date:'Y-m-d'}}" class="form-control" id="date-date">
-                      
-                    
-                                  <label for="recipient-name" class="col-form-label">Email</label>
-                                  <input type="text" name="email-email" value = "{{roomsss.email}}" class="form-control" id="email-email"  >
-                        
-                               
-                                  <label for="recipient-name" class="col-form-label">Day</label>
-                                  <input type="text" name="age-age" value="{{roomsss.day}}" class="form-control" id-="day-day">
+                                  <input type="date" name="date-date" value="{{roomm.date|date:'Y-m-d'}}" class="form-control" id="date-date">
 
+                                  <label for="recipient-name" class="col-form-label">Email</label>
+                                  <input type="text" name="email-email" value="{{roomm.email}}" class="form-control" id="email-email">
+
+                                  <label for="recipient-name" class="col-form-label">Day</label>
+                                  <input type="text" name="day-day" value = "{{roomm.day}}" class="form-control" id="day-day">
+                        
+
+
+                            
                                   </div>
                                 
                         
@@ -236,11 +234,11 @@
                         
                         
                         <!-- Button trigger modal -->
-  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{roomsss.rid}}"data-toggle="modal">DELETE</a>
+  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{roomm.rid}}"data-toggle="modal">DELETE</a>
     </div>
                           
                          <!-- Modal HTML -->
-<div id="Modal-{{roomsss.rid}}" class="modal fade" data-backdrop="false">
+<div id="Modal-{{roomm.rid}}" class="modal fade" data-backdrop="false">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header">
@@ -254,7 +252,7 @@
           {% csrf_token %}
 
       <div class="modal-body">
-        <input type="text" name="iidn-idn" value = {{roomsss.rid}} hidden>
+        <input type="text" name="ridn-idn" value = {{roomm.rid}} hidden>
         Are you sure you want to delete
       </div>
       <div class="modal-footer">

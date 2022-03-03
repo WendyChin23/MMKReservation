@@ -29,9 +29,7 @@ class Signup(View):
     def get(self, request):
         return render(request,'signup.html')
 
-class Roomss(View):
-    def get(self, request):
-        return render(request,'rooms.html')
+
 
 
 
@@ -201,7 +199,7 @@ class Roomss(View):
             Date = request.POST.get("date")
             Email = request.POST.get("email")
             Day = request.POST.get("day")
-            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day,)
+            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
             print('clicked')
             form.save() 
 
@@ -216,20 +214,20 @@ class Roomss(View):
 
 
 
-
 class AdminRoomsDashboard(View):
     def get(self, request):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            roomsss = Rooms.objects.all()
+            roomm = Rooms.objects.all()
        
         context = {
-            'roomsss' : roomsss,
+
+            'roomm' : roomm,
             'accountadmin':accountadmin, #name that we want to use
             
         }
-        return render(request,'adminaccounts.html', context)
+        return render(request,'adminrooms.html', context)
 
     def post(self, request):
         if request.method == 'POST':
@@ -241,14 +239,13 @@ class AdminRoomsDashboard(View):
                 Email = request.POST.get("email-email")             
                 Day = request.POST.get("day-day")
              
-                update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, date = Date, day = Day,
-                email = Email)
+                update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, date = Date, day = Day, email = Email)
                 print(update_rooms)
                 print('user updated')
 
             elif 'BtnDelete' in request.POST:
                 print('delete button clicked')
-                Idn = request.POST.get("iidn-idn")
+                Idn = request.POST.get("ridn-idn")
                 room = Rooms.objects.filter(rid=Idn).delete()
 
 
