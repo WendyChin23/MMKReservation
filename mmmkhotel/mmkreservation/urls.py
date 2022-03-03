@@ -9,6 +9,6 @@ urlpatterns= [
 	path('portfolio', views.Portfolio.as_view(), name="portfolio_view"),
 	path('signup', views.Signup.as_view(), name="signup_view"),
 	path('login', views.Login.as_view(), name="login_view"),
-
+	path('reservation', views.Reservation.as_view(), name="reservation_view"),
 	
 ]
