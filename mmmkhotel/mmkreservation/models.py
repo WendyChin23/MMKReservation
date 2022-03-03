@@ -22,8 +22,9 @@ class Admin(models.Model):
 
 class Rooms(models.Model):
     rid = models.BigAutoField(primary_key = True)
-    time = models.DateTimeField(max_length = 50) #pwede ma unique, blank is equal to not required, Null is equal to null
-    date = models.DateTimeField(max_length = 50)
+    roomtype = models.CharField(max_length=100)
+    date = models.DateField(max_length = 50)
     email = models.CharField(max_length = 50, unique = True)
     day = models.CharField(max_length=100)
-    price = models.IntegerField()
+
+

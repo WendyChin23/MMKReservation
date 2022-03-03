@@ -51,29 +51,6 @@
 
 <body>
 
-  <!-- ======= Hero Section ======= -->
-  <!-- <section id="hero">
-    <div class="hero-container">
-      <div data-aos="fade-in">
-        <div class="hero-logo">
-          <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
-        </div>
-
-        <h1>Welcome to MMK Hotel and Reservation</h1>
-        <h2>We offer <span class="typed" data-typed-items="affordable rooms, top quality ammenenities , great services "></span></h2>
-        <div class="actions">
-          <a href="#about" class="btn-get-started">Get Strated</a>
-          <a href="#services" class="btn-services">Our Services</a>
-        </div>
-      </div>
-    </div> -->
-  <!-- </section> -->
-  
-  <!-- End Hero -->
-  <!-- <div class="hero-logo">
-    <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
-  </div> -->
-  <!-- ======= Header ======= -->
 
 
 
@@ -133,7 +110,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Members</h2>
+          <h2>BOOK A ROOM</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Conference Room</li>
@@ -159,17 +136,6 @@
       </div>
       <div class="card-body">
 
-        <!--<form method="post" >
-             {% csrf_token %}
-             <table>
-                {{ form }}
-                 <tr>
-                    <td></td>
-                    <td><input type="submit" name="btnRegister" value="Register" /></td>
-                </tr>
-             </table>
-
-         </form>-->
 
       <form method="POST">
         {% csrf_token %}
@@ -178,55 +144,38 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Room Type" id="first_name" name="first_name"> 
+            <input type="text" class="form-control" placeholder="Room Type" id="roomtype" name="roomtype"> 
           </div>
 
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name">
-          </div>
-
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-at"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Email"  id="email" name="email">
-          </div>
-
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Address"  id="address" name="address">
-          </div>
-
+   
+          
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-calendar"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Age"  id="age" name="age">
+            <input type="text" class="form-control" placeholder="Email"  id="email" name="email">
           </div>
 
+
+           <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+            </div>
+            <input type="date" class="form-control" placeholder="Date"  id="date" name="date">
+          </div>
+   
 
 
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Username"  id="username" name="username">
+            <input type="text" class="form-control" placeholder="Day"  id="day" name="day">
           </div>
 
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="password" class="form-control" placeholder="Password"  id="password" name="password">
-          </div>
 
           <div class="form-group">
-            <div class="text-center"><button class="btn float-right login_btn"  href="{% url 'mmkreservation:login_view' %}" type="submit">Sign Up</button></div>            
+            <div class="text-center"><button class="btn float-right login_btn"  href="{% url 'mmkreservation:success_view' %}" type="submit">Book Now</button></div>            
 
           </div>
           
@@ -234,8 +183,8 @@
         </form>
       </div>
       <div class="card-footer">
-        <div class="d-flex justify-content-center links" href="{% url 'mmkreservation:login_view' %}">
-          Already have an account?<a href="{% url 'mmkreservation:login_view' %}">Login here</a>
+        <div class="d-flex justify-content-center links" href="{% url 'mmkreservation:signup_view' %}">
+          Do not have an account?<a href="{% url 'mmkreservation:signup_view' %}">Sign here</a>
         </div>
       </div>
     </div>

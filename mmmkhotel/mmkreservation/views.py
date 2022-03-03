@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
-from mmkreservation.forms import AccountForm
+from mmkreservation.forms import AccountForm, RoomForm
 
 from mmkreservation.models import Account, Admin
 
@@ -13,7 +13,13 @@ from mmkreservation.models import Account, Admin
 
 class Home(View):
     def get(self, request):
+        return render(request,'success.html')
+
+class Success(View):
+    def get(self, request):
         return render(request,'index.html')
+
+
 
 class Portfolio(View):
     def get(self, request):
@@ -23,10 +29,12 @@ class Signup(View):
     def get(self, request):
         return render(request,'signup.html')
 
-
 class Rooms(View):
     def get(self, request):
         return render(request,'rooms.html')
+
+
+
 
 class AdminPage(View):
     def get(self, request):
@@ -60,6 +68,7 @@ class Login(View):
             else:   
                 return HttpResponse('not valid')
         else:   
+
             return render(request,"signup.html")  
 
 
@@ -72,6 +81,7 @@ class AdminAccountsDashboard(View):
             user = Account.objects.all()
        
         context = {
+
             'user' : user,
             'accountadmin':accountadmin, #name that we want to use
             
@@ -177,4 +187,69 @@ class Signup(View):
 
 
 
+class Roomss(View):
+  
 
+    def get(self, request):
+        return render(request, 'rooms.html')
+
+    def post(self, request):
+        form = RoomForm(request.POST)
+        if form.is_valid():
+            Rid = request.POST.get("rid")
+            Roomtype = request.POST.get("roomtype")            
+            Date = request.POST.get("date")
+            Email = request.POST.get("email")
+            Day = request.POST.get("day")
+            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
+            print('clicked')
+            form.save()
+
+
+            return redirect('mmkreservation:adminroom_view')
+
+        else:
+            print(form.errors)
+            return HttpResponse('not valid')
+
+
+
+
+
+
+class AdminRoomsDashboard(View):
+    def get(self, request):
+        if 'admin' in request.session:
+            current_admin = request.session['admin']
+            accountadmin = Admin.objects.filter(username=current_admin) 
+            roomss = Rooms.objects.all()
+       
+        context = {
+            'roomss' : roomss,
+            'accountadmin':accountadmin, #name that we want to use
+            
+        }
+        return render(request,'adminaccounts.html', context)
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'BtnUpdate' in request.POST:
+                print('update button clicked')
+                Idn = request.POST.get("rid-rid")                                                                                                                                                                                                                                                                                                                                            
+                Roomtype = request.POST.get("roomtype")
+                Date = request.POST.get("date-date")
+                Email = request.POST.get("email-email")             
+                Day = request.POST.get("day-day")
+             
+                update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, date = Date, day = Day,
+                email = Email)
+                print(update_rooms)
+                print('user updated')
+
+            elif 'BtnDelete' in request.POST:
+                print('delete button clicked')
+                Idn = request.POST.get("iidn-idn")
+                room = Rooms.objects.filter(rid=Idn).delete()
+
+
+        return redirect('mmkreservation:adminroom_view')

@@ -155,25 +155,24 @@
        
           </th>
           <th>Room ID</th> 
-          <th>Time</th> 
+          <th>Room Type</th> 
           <th>Date</th> 
           <th>Email</th> 
           <th>Day</th>
-          <th>Price</th>
+    
           <th>Action</th> 
         </tr>
       </thead>
       
-            {% for rooms in rooms %}
+            {% for roomss in roomss %}
             <tr>
                 <td>   
-                <td>{{rooms.rid}}</td> 
-                <td>{{rooms.time}}</td> 
-                <td>{{rooms.date}}</td> 
-                <td>{{rooms.email}}</td> 
-                <td>{{rooms.address}}</td> 
-                <td>{{rooms.day}}</td>
-                <td>{{rooms.price}}</td>
+                <td>{{roomss.rid}}</td> 
+                <td>{{roomss.roomtype}}</td> 
+                <td>{{roomss.date}}</td> 
+                <td>{{roomss.email}}</td> 
+                <td>{{roomss.day}}</td>
+              
 
                  
                 <td>
@@ -183,12 +182,12 @@
                     <!-- {{ form.non_field_errors }}
                     {{ form.web_input }} -->
                     <input type="text" name="usernamep" value="{{account.username}}" class="form-control" id="usernamep" hidden>
-                    <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Rooms</button>           
+                    <!-- <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Rooms</button>            -->
                 </form>
                   
-                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{rooms.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
+                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{roomss.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
 
-                    <div class="modal fade" id="exampleModal-{{account.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
+                    <div class="modal fade" id="exampleModal-{{roomss.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
                       <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -204,24 +203,22 @@
                                   <div class="form-group">
                                 
                                  <label for="recipient-name" class="col-form-label">Order ID</label>
-                                <input name="uid-uid" value="{{rooms.rid}}" subject.type="text" class="form-control" id="uid-uid" readonly>
+                                <input name="rid-rid" value="{{roomss.rid}}" subject.type="text" class="form-control" id="rid-rid" readonly>
 
-                                  <label for="recipient-name" class="col-form-label">First Name</label>
-                                  <input type="text" name="first-name" value="{{rooms.time}}" class="form-control" id="first-name">
+                                  <label for="recipient-name" class="col-form-label">Roomtype</label>
+                                  <input type="text" name="roomtype" value="{{roomss.time}}" class="form-control" id="roomtype">
                         
-                                  <label for="recipient-name" class="col-form-label">Last Name</label>
-                                  <input type="text" name="last-name" value="{{rooms.date}}" class="form-control" id="last-name">
+
+                                  <label for="recipient-name" class="col-form-label">Date</label>
+                                  <input type="date" name="date-date" value="{{roomss.birthdate|date:'Y-m-d'}}" class="form-control" id="date-date">
+                      
+                    
                                   <label for="recipient-name" class="col-form-label">Email</label>
-                                  <input type="text" name="email-email" value = "{{rooms.email}}" class="form-control" >
+                                  <input type="text" name="email-email" value = "{{roomss.email}}" class="form-control" id="email-email"  >
                         
-                                  <label for="recipient-name" class="col-form-label">Address</label>
-                                  <input type="text" name="address-address" value="{{rooms.adress}}" class="form-control" id="address-address">
-
+                               
                                   <label for="recipient-name" class="col-form-label">Day</label>
-                                  <input type="text" name="age-age" value="{{rooms.day}}" class="form-control" id-="age-age">
-
-                                  <label for="recipient-name" class="col-form-label">Price</label>
-                                   <input type="text" name="user-name" value="{{rooms.price}}" class="form-control" id=" user-name">
+                                  <input type="text" name="age-age" value="{{roomss.day}}" class="form-control" id-="day-day">
 
                                   </div>
                                 
@@ -241,11 +238,11 @@
                         
                         
                         <!-- Button trigger modal -->
-  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{rooms.rid}}"data-toggle="modal">DELETE</a>
+  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{roomss.rid}}"data-toggle="modal">DELETE</a>
     </div>
                           
                          <!-- Modal HTML -->
-<div id="Modal-{{rooms.rid}}" class="modal fade" data-backdrop="false">
+<div id="Modal-{{roomss.rid}}" class="modal fade" data-backdrop="false">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header">
@@ -259,7 +256,7 @@
           {% csrf_token %}
 
       <div class="modal-body">
-        <input type="text" name="iidn-idn" value = {{rooms.rid}} hidden>
+        <input type="text" name="iidn-idn" value = {{roomss.rid}} hidden>
         Are you sure you want to delete
       </div>
       <div class="modal-footer">

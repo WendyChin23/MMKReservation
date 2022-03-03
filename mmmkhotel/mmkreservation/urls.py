@@ -11,9 +11,10 @@ urlpatterns= [
 	path('login', views.Login.as_view(), name="login_view"),
 	path('adminpage', views.AdminPage.as_view(), name="admin_view"),
 	path('adminrooms', views.AdminRooms.as_view(), name="adminroom_view"),
-	path('rooms', views.Rooms.as_view(), name="rooms_view"),
+	path('rooms', views.Roomss.as_view(), name="rooms_view"),
 
 	path('adminaccounts', views.AdminAccountsDashboard.as_view(), name="adminaccounts_view"),
+	path('success', views.Success.as_view(), name="success_view"),
 
 	
 ]
