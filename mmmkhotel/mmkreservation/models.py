@@ -20,3 +20,15 @@ class Admin(models.Model):
     aid = models.AutoField(primary_key = True)
     username = models.CharField(max_length = 50)
     password = models.CharField(max_length = 30)
+    
+class Reservation(models.Model):
+    first_name = models.CharField(max_length = 50)
+    last_name = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 50, unique = True)
+    phone = models.IntegerField()
+    address = models.CharField(max_length = 100)
+    zip = models.IntegerField()
+    checkin_date = models.DateTimeField()
+    checkin_time = models.TimeField()
+    checkout_date = models.DateTimeField()
+    checkout_time = models.TimeField()
