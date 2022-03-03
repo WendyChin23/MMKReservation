@@ -31,9 +31,6 @@ class Signup(View):
 
 
 
-
-
-
 class AdminPage(View):
     def get(self, request):
         return render(request,'adminpage.html')     
