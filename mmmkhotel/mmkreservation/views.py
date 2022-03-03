@@ -23,6 +23,11 @@ class Signup(View):
     def get(self, request):
         return render(request,'signup.html')
 
+
+class Rooms(View):
+    def get(self, request):
+        return render(request,'rooms.html')
+
 class AdminPage(View):
     def get(self, request):
         return render(request,'adminpage.html')     
