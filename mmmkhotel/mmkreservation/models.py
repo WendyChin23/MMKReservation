@@ -23,7 +23,7 @@ class Admin(models.Model):
 class Rooms(models.Model):
     rid = models.BigAutoField(primary_key = True)
     roomtype = models.CharField(max_length=100)
-    date = models.DateField(max_length = 50)
+    date = models.DateField()
     email = models.CharField(max_length = 50, unique = True)
     day = models.CharField(max_length=100)
 

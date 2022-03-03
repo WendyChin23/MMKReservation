@@ -13,7 +13,7 @@ from mmkreservation.models import Account, Admin, Rooms
 
 class Home(View):
     def get(self, request):
-        return render(request,'success.html')
+        return render(request,'index.html')
 
 class Success(View):
     def get(self, request):
@@ -113,30 +113,7 @@ class AdminAccountsDashboard(View):
         return redirect('mmkreservation:adminaccounts_view')
 
 
-class AccountView(View):
-    def get(self, request):
-        return render(request, 'adminaccounts.html')                      
-    def post(self, request):
-        form = AccountForm(request.POST)
-        if form.is_valid():
-            fname = request.POST.get("first_name")
-            Uid = request.POST.get("uid")            
-            lname = request.POST.get("last_name")
-            Email = request.POST.get("email")
-            Address = request.POST.get("address")
-            Age = request.POST.get("age")
-            Username = request.POST.get("username")
-            Password = request.POST.get("password")
-            form = Account(uid = Uid, first_name = fname, last_name = lname, email = Email, address = Address, age = Age,
-             username = Username, password=Password)
-            print('clicked')
-            form.save() 
 
-            return redirect('mmkreservation:adminaccounts_view')
-
-        else:
-            print(form.errors)
-            return HttpResponse('not valid')
 
 
 
@@ -185,7 +162,34 @@ class Signup(View):
 
 
 
-class Roomss(View):
+# class Roomss(View):
+  
+
+#     def get(self, request):
+#         return render(request, 'rooms.html')
+
+#     def post(self, request):
+#         form = RoomForm(request.POST)
+#         if form.is_valid():
+#             Rid = request.POST.get("rid")
+#             Roomtype = request.POST.get("roomtype")            
+#             Date = request.POST.get("date")
+#             Email = request.POST.get("email")
+#             Day = request.POST.get("day")
+#             form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
+#             print('clicked')
+#             form.save() 
+
+
+#             return redirect('mmkreservation:adminroom_view')
+
+#         else:
+#             print(form.errors)
+#             return HttpResponse('not valid')
+
+
+
+class RoomAdd(View):
   
 
     def get(self, request):
@@ -203,12 +207,14 @@ class Roomss(View):
             print('clicked')
             form.save() 
 
-
-            return redirect('mmkreservation:adminroom_view')
-
+            #return HttpResponse('Student record saved!')           
+            return redirect('mmkreservation:success_view')
+            # except:
+            #   raise Http404
         else:
             print(form.errors)
-            return HttpResponse('not valid')
+            return HttpResponse('not valid') 
+
 
 
 
@@ -241,11 +247,11 @@ class AdminRoomsDashboard(View):
              
                 update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, date = Date, day = Day, email = Email)
                 print(update_rooms)
-                print('user updated')
+                print('rooms updated')
 
             elif 'BtnDelete' in request.POST:
                 print('delete button clicked')
-                Idn = request.POST.get("ridn-idn")
+                Idn = request.POST.get("iidn-idn")
                 room = Rooms.objects.filter(rid=Idn).delete()
 
 
