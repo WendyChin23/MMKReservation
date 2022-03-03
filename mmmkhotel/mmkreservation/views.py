@@ -47,3 +47,7 @@ class Login(View):
                 return HttpResponse('not valid')
         else:   
             return render(request,"signup.html")
+        
+ class Reservation(View):
+    def get(self, request):
+        return render(request,'reservation.html')
