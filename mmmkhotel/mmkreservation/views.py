@@ -200,10 +200,10 @@ class RoomAdd(View):
         if form.is_valid():
             Rid = request.POST.get("rid")
             Roomtype = request.POST.get("roomtype")            
-            Date = request.POST.get("date")
+    
             Email = request.POST.get("email")
             Day = request.POST.get("day")
-            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
+            form = Rooms(rid = Rid, roomtype = Roomtype, email = Email, day = Day)
             print('clicked')
             form.save() 
 
@@ -241,11 +241,11 @@ class AdminRoomsDashboard(View):
                 print('update button clicked')
                 Idn = request.POST.get("rid-rid")                                                                                                                                                                                                                                                                                                                                            
                 Roomtype = request.POST.get("roomtype")
-                Date = request.POST.get("date-date")
+             
                 Email = request.POST.get("email-email")             
                 Day = request.POST.get("day-day")
              
-                update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, date = Date, day = Day, email = Email)
+                update_rooms = Rooms.objects.filter(rid=Idn).update(roomtype = Roomtype, day = Day, email = Email)
                 print(update_rooms)
                 print('rooms updated')
 
