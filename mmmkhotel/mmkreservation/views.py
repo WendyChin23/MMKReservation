@@ -17,7 +17,7 @@ class Home(View):
 
 class Success(View):
     def get(self, request):
-        return render(request,'index.html')
+        return render(request,'success.html')
 
 
 
