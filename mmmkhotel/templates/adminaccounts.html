@@ -9,7 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>USER DASHBOARD</title>
       <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'assets/css/css/bootstrap.min.css'%}">
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <!-- jQuery library -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
       <!----css3---->
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     
@@ -179,18 +186,12 @@
                  
                 <td>
                   
-                <form method="POST">
-                    {% csrf_token %}
-                    <!-- {{ form.non_field_errors }}
-                    {{ form.web_input }} -->
-                    <input type="text" name="usernamep" value="{{user.username}}" class="form-control" id="username" hidden>
-                    <!-- <button href="{% url 'mmkreservation:Home_view' %}" type="submit" class="btn btn-primary" name="BtnGrades" id="BtnGrades" title="grades">Grades</button>            -->
-                </form>
+                
                   
                     <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{user.id}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
 
                     <div class="modal fade" id="exampleModal-{{accounts.uid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
-                      <div class="modal-dialog">
+                      <div class="modal-dialog" style="width: 900px; padding-top: 100px">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
