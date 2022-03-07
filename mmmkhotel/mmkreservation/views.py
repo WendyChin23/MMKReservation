@@ -6,7 +6,7 @@ from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
 from mmkreservation.forms import AccountForm, RoomForm, PaymentForm
 
-from mmkreservation.models import Account, Admin, Rooms
+from mmkreservation.models import Account, Admin, Payment, Rooms
 
 
 # Create your views here.
@@ -255,7 +255,7 @@ class AdminRoomsDashboard(View):
         return redirect('mmkreservation:adminroom_view')
 
 
-class Payment(View):
+class PaymentPage(View):
 
     def get(self, request):
         return render(request, 'payment.html')
@@ -275,15 +275,70 @@ class Payment(View):
             Amount = request.POST.get("amount")
             Mop = request.POST.get("mop")
 
-            form = Payment( id = Id, name = Name, 
-            email=Email, amount=Amount, mop=Mop)
+            form = Payment(id = Id, name = Name,  email=Email, amount=Amount, mop=Mop)
             print('clicked')
-            form.save() 
+            form.save()
 
             #return HttpResponse('Student record saved!')           
-            return redirect('appdev:success_view')
+            return redirect('mmkreservation:success_view')
             # except:
             #   raise Http404
         else:
             print(form.errors)
             return HttpResponse('not valid')  
+
+
+class AdminPaymentDashboard(View):
+    def get(self, request):
+        if 'admin' in request.session:
+            current_admin = request.session['admin']
+            accountadmin = Admin.objects.filter(username=current_admin) 
+            method = Rooms.objects.all()  
+            # pantawag sa html sa table
+       
+        context = {
+
+            'method' : method,
+            'accountadmin':accountadmin, #name that we want to use
+            
+        }
+        return render(request,'adminrooms.html', context)
+
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'BtnUpdate' in request.POST:
+                print('update button clicked')
+                Id = request.POST.get("id-id")                                                                                                                                                                                                                                                                                                                                            
+                Name = request.POST.get("name-name")
+                Email = request.POST.get("email-email")             
+                Amount = request.POST.get("amount-amount")
+                Mop = request.POST.get("mop-mop")
+   
+                update_payment = Payment.objects.filter(id=Id).update(name = Name, 
+                 email=Email, amount=Amount, mop=Mop)
+                print(update_payment)
+                print('payment updated')
+                
+            elif 'BtnDelete' in request.POST:
+                print('delete button clicked')
+                Id = request.POST.get("iid-id")
+                students = Payment.objects.filter(id=Id).delete()
+
+        return redirect('appdev:donationdashboard_view')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
