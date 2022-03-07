@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>USER DASHBOARD</title>
+        <title>PAYMENT DASHBOARD</title>
       <!-- Bootstrap CSS -->
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -130,10 +130,6 @@
        </div>
 
 
-
-
-
-		   
 		   <!--------main-content------------->
 		  
 		   <div class="main-content">
@@ -152,7 +148,6 @@
     </div>
  
     {% block content %} 
-    <hr/>
     <form method="POST">
       {% csrf_token %}
     <table class="table table-striped table-hover">
@@ -281,11 +276,6 @@
 
 
 
-
-
-
-
-
 <!-- Delete Modal HTML
 <div id="deleteEmployeeModal" class="modal fade">
   <div class="modal-dialog">
@@ -315,10 +305,7 @@
 			 
 
 
-
-
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
  
         <!-- ======= Footer ======= -->
         <footer id="footer">
