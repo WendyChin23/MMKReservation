@@ -1,15 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MMK Hotel Reservation</title>
-  <meta content="" name="description">
+	<title>Payment Checkout Form</title>
+	      <!-- Bootstrap CSS -->
+ <meta content="" name="description">
   <meta content="" name="keywords">
-
+ 
   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
   <meta property="og:title" content="">
   <meta property="og:image" content="">
@@ -40,40 +40,8 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Imperial - v5.7.0
-  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
-
-  <!-- ======= Hero Section ======= -->
-  <!-- <section id="hero">
-    <div class="hero-container">
-      <div data-aos="fade-in">
-        <div class="hero-logo">
-          <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
-        </div>
-
-        <h1>Welcome to MMK Hotel and Reservation</h1>
-        <h2>We offer <span class="typed" data-typed-items="affordable rooms, top quality ammenenities , great services "></span></h2>
-        <div class="actions">
-          <a href="#about" class="btn-get-started">Get Strated</a>
-          <a href="#services" class="btn-services">Our Services</a>
-        </div>
-      </div>
-    </div> -->
-  <!-- </section> -->
-  
-  <!-- End Hero -->
-  <!-- <div class="hero-logo">
-    <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
-  </div> -->
-  <!-- ======= Header ======= -->
 
 
 
@@ -98,8 +66,9 @@
             <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
           </li>
           <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
-       
+      
       </li>
+      <li><a class="nav-link scrollto" href="{% url 'mmkreservation:login_view' %}">Account</a></li>
       <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
         <ul>
           <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
@@ -117,12 +86,20 @@
               </ul>
   </header><!-- End Header -->
 
-
-<body>
-  
-
+    </ul>
+    </div>
 
 
+
+
+    {% block content %} 
+<div class="wrapper">
+  <div class="payment">
+    <div class="payment-logo">
+    
+    </div>
+    
+    
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -130,72 +107,80 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Members</h2>
+          <h2>PAYMENT</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Members</li>
+            <li>Payment</li>
           </ol>
         </div>
+	</section><!-- End Breadcrumbs -->
+		    <div class="image" style="background: url('{% static "assets/img/hero-bg.jpg"%}')" >
 
-      </div>
-    </section><!-- End Breadcrumbs -->
-    <div class="image" style="background: url('{% static "assets/img/hero-bg.jpg"%}')" >
-
-    <br><br><br>
+<br><br>
 	<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
-			</div>
-            
-      {% block content %}
-			<div class="card-body">
-				<form method = "POST">
-          {% csrf_token %}
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" name = "username" placeholder="Username">
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" name = "password" placeholder="Password">
-					</div> <center>
-					<div class="row align-items-center remember"><br><br>
-					<center>	<input type="checkbox">Remember Me </center><br>
-					</div>
-					<div class="form-group">
-             <button class="btn float-right login_btn"  type="submit">Login</button> 
-            
-					</div> </center>
-				</form>
-			</div> 
-       {% endblock content %}
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account? <a href="{% url 'mmkreservation:signup_view' %}">  Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<br><br><br><br><br><br><br>
-    <!-- End Members Section -->
-    <br><br><br><br><br><br><br><br><br><br>
-</main><!-- End #main -->
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Reservation Payment</h3>
+        <div class="d-flex justify-content-end social_icon">
+          <span><i class="fab fa-facebook-square"></i></span>
+          <span><i class="fab fa-google-plus-square"></i></span>
+          <span><i class="fab fa-twitter-square"></i></span>
+        </div>
+      </div>
+      <div class="card-body">
 
+	<center><form method="POST">
+		{% csrf_token %}
+
+		<form>
+ 			<span>
+ 		<div class="forms">
+	<i class="fa fa-lock"></i>
+	<input type="text" class="input" id="id-Name" name="name" placeholder="Enter  Name..."/>
+	</span><br></div>
+
+	<span>
+		<div class="forms">
+	<i class="fa fa-lock"></i>
+	 <input type="text" class="input" id="id-Email" name="email" placeholder="Enter Email"/>
+	</span><br></div>
+
+
+	<span>
+		<div class="forms">
+	<i class="fa fa-lock"></i>
+	 <input type="text" class="input" id="id-Amount" name="amount" placeholder="Enter Amount..."/>
+		</span><br></div>
+
+		<span>
+			<div class="forms">
+	<i class="fa fa-lock"></i>
+	 <input type="text" class="input" id="id-Mop" name="mop" placeholder="Enter Mode of Payment... "/>
+		</span><br>
+
+
+
+
+	<center>
+	<input type="submit" class="btn" value="Submit"/> </center>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+ </center>
+{% endblock content %}
+	</form>
+</center>
+	
+        <br><br><br><br><br><br><br><br><br><br>
+
+<hr>
 <!-- ======= Footer ======= -->
 <footer id="footer">
   <div class="container">
@@ -216,6 +201,8 @@
       </div>
     </div>
   </div>
+  <br>
+
 </footer><!-- End Footer -->
 
 <div id="preloader"></div>
@@ -236,4 +223,5 @@
 </body>
 
 </html>
+
 

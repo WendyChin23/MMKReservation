@@ -9,7 +9,7 @@
   <title>MMK Hotel Reservation</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+ 
   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
   <meta property="og:title" content="">
   <meta property="og:image" content="">
@@ -51,6 +51,29 @@
 
 <body>
 
+  <!-- ======= Hero Section ======= -->
+  <!-- <section id="hero">
+    <div class="hero-container">
+      <div data-aos="fade-in">
+        <div class="hero-logo">
+          <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
+        </div>
+
+        <h1>Welcome to MMK Hotel and Reservation</h1>
+        <h2>We offer <span class="typed" data-typed-items="affordable rooms, top quality ammenenities , great services "></span></h2>
+        <div class="actions">
+          <a href="#about" class="btn-get-started">Get Strated</a>
+          <a href="#services" class="btn-services">Our Services</a>
+        </div>
+      </div>
+    </div> -->
+  <!-- </section> -->
+  
+  <!-- End Hero -->
+  <!-- <div class="hero-logo">
+    <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
+  </div> -->
+  <!-- ======= Header ======= -->
 
 
 
@@ -77,21 +100,8 @@
           <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
       
       </li>
-      <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
-        <ul>
-          <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
-          <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
-          </li>
+      <li><a class="nav-link scrollto" href="{% url 'mmkreservation:login_view' %}">Account</a></li>
     </ul>
-            <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">View Rooms Available</a></li>
-                <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
-                <li><a href="#">Rates</a></li>
-                <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
-
-                </li>
-              </ul>
 
     </div>
   </header><!-- End Header -->
@@ -101,6 +111,18 @@
   
 {% block content %} 
   <hr/>
+  <div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Book a Room</h3>
+        <div class="d-flex justify-content-end social_icon">
+          <span><i class="fab fa-facebook-square"></i></span>
+          <span><i class="fab fa-google-plus-square"></i></span>
+          <span><i class="fab fa-twitter-square"></i></span>
+        </div>
+      </div>
+      <div class="card-body">
   <form method="POST">
     {% csrf_token %}
 
@@ -112,10 +134,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>BOOK A ROOM</h2>
+          <h2>Members</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Conference Room</li>
+            <li>Members</li>
           </ol>
         </div>
 
@@ -129,7 +151,7 @@
   <div class="d-flex justify-content-center h-100">
     <div class="card">
       <div class="card-header">
-        <h3>Book a Room</h3>
+        <h3>Reservation Details</h3>
         <div class="d-flex justify-content-end social_icon">
           <span><i class="fab fa-facebook-square"></i></span>
           <span><i class="fab fa-google-plus-square"></i></span>
@@ -138,60 +160,146 @@
       </div>
       <div class="card-body">
 
+        <!--<form method="post" >
+             {% csrf_token %}
+             <table>
+                {{ form }}
+                 <tr>
+                    <td></td>
+                    <td><input type="submit" name="btnRegister" value="Register" /></td>
+                </tr>
+             </table>
+
+         </form>-->
 
       <form method="POST">
         {% csrf_token %}
           <div class="input-group form-group">
-
+            <label for="first_name">Firstname</label>
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Room Type" id="roomtype" name="roomtype"> 
+            <input type="text" class="form-control" id="first_name" name="first_name"> 
           </div>
 
-   
+          <div class="input-group form-group">
+            <label for="last_name">Lastname</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+          </div>
+
+          <div class="input-group form-group">
+            <label for="email">Email</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-at"></i></span>
+            </div>
+            <input type="text" class="form-control" id="email" name="email">
+          </div>
+
+          <div class="input-group form-group">
+            <label for="phone">Phone</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+            </div>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+
+          <div class="input-group form-group">
+            <label for="address">Address</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <input type="text" class="form-control" id="address" name="address">
+          </div>
+
+          <div class="input-group form-group">
+            <label for="zip">Zip</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <input type="text" class="form-control" id="zip" name="zip">
+          </div>
+
+          <div class="input-group date" data-provide="datepicker">
+            <label for="checkin_date">Check-in Date</label>
+            <input type="text" class="form-control">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
           
           <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Email"  id="email" name="email">
-          </div>
-
-
-          <div class="input-group form-group">
+            <label for="checkin_time">Check-in Time</label>
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
             </div>
-            <input type="date" class="form-control" placeholder="Date"  id="id-date" name="date">
+            <input class="form-control" id="time" type="time" name="time" value="13:30">
           </div>
 
-
+          <div class="input-group date" data-provide="datepicker">
+            <label for="checkout_date">Check-out Date</label>
+            <input type="text" class="form-control">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
 
           <div class="input-group form-group">
+            <label for="checkout_time">Check-out Time</label>
             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+              <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Day"  id="day" name="day">
-          </div>
-
-
-          <div class="form-group">
-            <div class="text-center"><button class="btn float-right login_btn"  href="{% url 'mmkreservation:success_view' %}" type="submit">Book Now</button></div>            
-
+            <input class="form-control" id="time" type="time" name="time" value="13:30">
           </div>
           
+        <div class="input-group form-group">
+          <label for="standard">Room Preferences</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="standard" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Standard
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group form-group">
+            <label for="deluxe">Room Preferences</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="deluxe" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Deluxe
+              </label>
+            </div>
+        </div>
+
+        <div class="input-group form-group">
+            <label for="suite">Room Preferences</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="suite" id="flexRadioDefault3">
+              <label class="form-check-label" for="flexRadioDefault3">
+                Suite
+              </label>
+            </div>
+        </div>
+        
+          <!--<div class="form-group">
+            <div class="text-center"><button class="btn float-right login_btn"  href="{% url 'mmkreservation:login_view' %}" type="submit">Sign Up</button></div>            
+
+          </div>-->
+          
    {% endblock content %}       
-        </form>
+       <!-- </form>
       </div>
       <div class="card-footer">
-        <div class="d-flex justify-content-center links" href="{% url 'mmkreservation:signup_view' %}">
-          Do not have an account?<a href="{% url 'mmkreservation:signup_view' %}">Sign here</a>
+        <div class="d-flex justify-content-center links" href="{% url 'mmkreservation:login_view' %}">
+          Already have an account?<a href="{% url 'mmkreservation:login_view' %}">Login here</a>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <br><br><br>
     <!-- End Members Section -->
     <br><br><br><br><br><br>

@@ -27,4 +27,11 @@ class Rooms(models.Model):
     email = models.CharField(max_length = 50, unique = True)
     day = models.CharField(max_length=100)
 
+class Payment(models.Model):
+    id = models.AutoField(primary_key = True)
+    name = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 30)
+    mop = models.CharField(max_length = 30)
+    amount = models.IntegerField()
+
 

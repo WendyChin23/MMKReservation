@@ -12,6 +12,8 @@ urlpatterns= [
 	path('adminpage', views.AdminPage.as_view(), name="admin_view"),
 	path('adminrooms', views.AdminRoomsDashboard.as_view(), name="adminroom_view"),
 	path('rooms', views.RoomAdd.as_view(), name="rooms_view"),
+	path('payment', views.Payment.as_view(), name="payment_view"),
+
 
 	path('adminaccounts', views.AdminAccountsDashboard.as_view(), name="adminaccounts_view"),
 	path('success', views.Success.as_view(), name="success_view"),

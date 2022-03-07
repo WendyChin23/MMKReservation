@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
-from mmkreservation.forms import AccountForm, RoomForm
+from mmkreservation.forms import AccountForm, RoomForm, PaymentForm
 
 from mmkreservation.models import Account, Admin, Rooms
 
@@ -253,3 +253,37 @@ class AdminRoomsDashboard(View):
 
 
         return redirect('mmkreservation:adminroom_view')
+
+
+class Payment(View):
+
+    def get(self, request):
+        return render(request, 'payment.html')
+
+    def post(self, request):        
+        form = PaymentForm(request.POST)        
+        # fname = request.POST.get("firstname")
+        # print(fname)
+        # lname = request.POST.get("lastname")
+        # print(lname)
+        if form.is_valid():
+            # try:
+
+            Name = request.POST.get("name")
+            Id = request.POST.get("id")            
+            Email = request.POST.get("email")
+            Amount = request.POST.get("amount")
+            Mop = request.POST.get("mop")
+
+            form = Payment( id = Id, name = Name, 
+            email=Email, amount=Amount, mop=Mop)
+            print('clicked')
+            form.save() 
+
+            #return HttpResponse('Student record saved!')           
+            return redirect('appdev:success_view')
+            # except:
+            #   raise Http404
+        else:
+            print(form.errors)
+            return HttpResponse('not valid')  
