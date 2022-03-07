@@ -262,10 +262,7 @@ class PaymentPage(View):
 
     def post(self, request):        
         form = PaymentForm(request.POST)        
-        # fname = request.POST.get("firstname")
-        # print(fname)
-        # lname = request.POST.get("lastname")
-        # print(lname)
+       
         if form.is_valid():
             # try:
 
@@ -293,7 +290,7 @@ class AdminPaymentDashboard(View):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            method = Rooms.objects.all()  
+            method = Payment.objects.all()  
             # pantawag sa html sa table
        
         context = {
@@ -302,7 +299,7 @@ class AdminPaymentDashboard(View):
             'accountadmin':accountadmin, #name that we want to use
             
         }
-        return render(request,'adminrooms.html', context)
+        return render(request,'adminpayment.html', context)
 
 
     def post(self, request):
@@ -325,7 +322,7 @@ class AdminPaymentDashboard(View):
                 Id = request.POST.get("iid-id")
                 students = Payment.objects.filter(id=Id).delete()
 
-        return redirect('appdev:donationdashboard_view')
+        return redirect('mmkreservation:adminpayment_view')
 
 
 
