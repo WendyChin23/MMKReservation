@@ -7,9 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>USER DASHBOARD</title>
+        <title>ROOM DASHBOARD</title>
       <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'assets/css/css/bootstrap.min.css'%}">
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <!-- jQuery library -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
       <!----css3---->
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     
@@ -182,9 +189,12 @@
                 </form>
                   
                     <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{roomm.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
-
+                    
 
                     <div class="modal fade" id="exampleModal-{{roomm.rid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
+                     
+                      <div class="modal-dialog" style="width: 1500px; padding-top: 200px">
+                     
                       <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
