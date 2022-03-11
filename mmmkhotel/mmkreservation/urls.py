@@ -19,6 +19,7 @@ urlpatterns= [
 
 	path('adminaccounts', views.AdminAccountsDashboard.as_view(), name="adminaccounts_view"),
 	path('success', views.Success.as_view(), name="success_view"),
-
+	
+	path('adminviewroom', views.AdminViewRoom.as_view(), name="adminviewroom_view"),
 	
 ]
