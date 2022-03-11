@@ -324,6 +324,74 @@ class AdminPaymentDashboard(View):
 
         return redirect('mmkreservation:adminpayment_view')
 
+class AdminViewRoom(View):
+    def get(self, request):
+        if 'admin' in request.session:
+            current_admin = request.session['admin']
+            accountadmin = Admin.objects.filter(username=current_admin) 
+            conference = conference.objects.all()
+       
+        context = {
+
+            'conference' : conference,
+            'accountadmin':accountadmin, #name that we want to use
+            
+        }
+        return render(request,'adminviewroom.html', context)
+
+    def post(self, request):
+        if request.method == 'POST':
+            if 'BtnUpdate' in request.POST:
+                print('update button clicked')
+                Idn = request.POST.get("rid-rid")                                                                                                                                                                                                                                                                                                                                            
+                Image = request.POST.get("image")
+                Category = request.POST.get("category")
+                Date = request.POST.get("date")             
+                #Day = request.POST.get("day-day")
+             
+                update_conference = Conference.objects.filter(rid=Idn).update(image = Image, category = Category, date = Date)
+                print(update_conference)
+                print('conference updated')
+
+            elif 'BtnDelete' in request.POST:
+                print('delete button clicked')
+                Idn = request.POST.get("iidn-idn")
+                conference = Conference.objects.filter(rid=Idn).delete()
+
+
+        return redirect('mmkreservation:adminviewroom_view')
+
+
+class Conference(View):
+    
+    def get(self, request):
+        return render(request, 'conference.html')
+
+    def post(self, request):        
+        form = ConferenceForm(request.POST)        
+       
+        if form.is_valid():
+            # try:
+
+            #Name = request.POST.get("name")
+            Id = request.POST.get("id")            
+            Image = request.POST.get("image")
+            Category = request.POST.get("category")
+            Date = request.POST.get("date")
+
+            form = Conference(id = Id, image=Image, category=Category, date=Date)
+            print('clicked')
+            form.save()
+
+            #return HttpResponse('Student record saved!')           
+            return redirect('mmkreservation:success_view')
+            # except:
+            #   raise Http404
+        else:
+            print(form.errors)
+            return HttpResponse('not valid')  
+
+
 
 
 
