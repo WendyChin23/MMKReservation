@@ -30,3 +30,7 @@ class PaymentForm(forms.ModelForm):
 		model = Payment
 		fields = '__all__'	
 
+class ConferenceForm(forms.ModelForm):
+    class Meta:
+        model = Conference
+        fields = '__all__'
