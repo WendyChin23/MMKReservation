@@ -34,4 +34,7 @@ class Payment(models.Model):
     mop = models.CharField(max_length = 30)
     amount = models.IntegerField()
 
-
+class Conference(models.Model):
+    image = models.ImageField(upload_to=FilePathField, null=True, blank=True)
+    category = models.CharField(max_length=30)
+    date = models.DateField()
