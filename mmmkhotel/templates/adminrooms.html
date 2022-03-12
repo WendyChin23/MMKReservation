@@ -20,7 +20,10 @@
       <!----css3---->
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     
-    
+         <!-- Favicons -->
+   
+  <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> 
     <!--google fonts -->
   
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,7 +193,6 @@
                     {% csrf_token %}
                     <!-- {{ form.non_field_errors }}
                     {{ form.web_input }} -->
-                    <input type="text" name="usernamep" value="{{account.username}}" class="form-control" id="usernamep" hidden>
                 </form>
                   
                     <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{roomm.rid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>

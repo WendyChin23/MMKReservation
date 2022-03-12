@@ -54,23 +54,6 @@
 
 <body>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <div data-aos="fade-in">
-        <div class="hero-logo">
-          <img class="" src="{% static 'assets/img/logo1.png'%}" alt="Imperial">
-        </div>
-
-        <h1>Welcome to MMK Hotel and Reservation</h1>
-        <h2>We offer <span class="typed" data-typed-items="affordable rooms, top quality ammenenities , great services "></span></h2>
-        <div class="actions">
-          <a href="#about" class="btn-get-started">Get Started</a>
-          <a href="#services" class="btn-services">Our Services</a>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Hero -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
@@ -82,7 +65,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
+          <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
        
 
           <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
@@ -107,7 +90,7 @@
               <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
               <li><a href="{% url 'mmkreservation:rates_view' %}"">Rates</a></li>
               <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
-              
+
               </li>
             </ul>
         
@@ -120,65 +103,7 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="section-title">About Us</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">At MMK Conference Room Reservations our purpose is to provide a convenient
-                way to make a room reservation.
-                
-                
-                
-             </p>
-          </div>
-        </div>
-      </div>
-      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
-        <div class="row">
-
-          <div class="col-lg-6 about-img">
-            <img src="{% static 'assets/img/about.png'%}" alt="">
-          </div>
-
-          <div class="col-md-6 about-content">
-            <h2 class="about-title">We provide great services and ensure quality</h2>
-            <p class="about-text">
-                MMK provide the very best customer service, we aim to inspire the world by
-                showing its possible to simultaneously show convenient to customers and employees
-                in a sustainable way. We offer better value, free wi-fi, more space, more privacy and
-                more flexibility to our conference room.
-            </p>
-            <p class="about-text">
-                At MMK Conference Room Reservations our purpose is to provide a convinient
-                way to make a room reservation.
-                
-                
-                
-                MMK provide the very best customer service, we aim to inspire the world by
-                showing its possible to simultaneously show convinient to customers and employees
-                in a sustainable way. We offer better value, free wi-fi, more space, more privacy and
-                more flexibility to our conference room.
-                
-                
-                
-                The MMK Conference Room Reservation System offers the unique ability to
-                provide real-time online reservations functionality, which enables the collection
-                of reservations from our website.
-                
-                
-                
-               
-            </p>
-            <p class="about-text">
-                Our mission is to empower you to achieve your lifestyle goals. We're here
-                to enrich your daily lives with our integrated services in a single platform.            </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
+  
 
     <!-- ======= Services Section ======= -->
     <section id="services">
@@ -474,140 +399,6 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="section-title">Our Team</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-3">
-            <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/barbaso.jpg'%}" alt=""></div>
-              <h4>Leah  Barbaso </h4>
-              <span>Adviser</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/landao.jpg'%}" alt=""></div>
-              <h4>MAriah Steiphan Landao </h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/regner.jpg'%}" alt=""></div>
-              <h4>Marielle Regner </h4>
-              <span>CEO</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/chin.jpg'%}" alt=""></div>
-              <h4>Kristine Velasquez</h4>
-              <span>Manager</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="section-title">Contact Us</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-3 col-md-4">
-            <div class="info">
-              <div>
-                <i class="bi bi-geo-alt"></i>
-                <p>N Bacalso Street <br>Cebu City 6000 Philippines</p>
-              </div>
-
-              <div>
-                <i class="bi bi-envelope"></i>
-                <p>support@mmkhotel.com</p>
-              </div>
-
-              <div>
-                <i class="bi bi-phone"></i>
-                <p>09284213074</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-5 col-md-8">
-            <div class="form">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

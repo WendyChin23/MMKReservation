@@ -24,9 +24,10 @@
   <meta name="twitter:description" content="">
   <meta name="twitter:image" content="">
 
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+      <!-- Favicons -->
+   
+      <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+      <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
@@ -87,7 +88,7 @@
               <ul>
                 <li><a href="{% url 'mmkreservation:userviewroom_view' %}">View Rooms Available</a></li>
                 <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
-                <li><a href="#">Rates</a></li>
+              <li><a href="{% url 'mmkreservation:rates_view' %}"">Rates</a></li>
                 <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
 
                 </li>

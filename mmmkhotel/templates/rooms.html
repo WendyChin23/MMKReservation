@@ -9,7 +9,10 @@
   <title>MMK Hotel Reservation</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+      <!-- Favicons -->
+   
+      <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+      <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
   <meta property="og:title" content="">
   <meta property="og:image" content="">
@@ -87,7 +90,7 @@
               <ul>
                 <li><a href="{% url 'mmkreservation:userviewroom_view' %}">View Rooms Available</a></li>
                 <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
-                <li><a href="#">Rates</a></li>
+                <li><a href="{% url 'mmkreservation:rates_view' %}"">Rates</a></li>
                 <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
                 
                 </li>

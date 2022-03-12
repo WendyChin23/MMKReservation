@@ -15,6 +15,10 @@ class Home(View):
     def get(self, request):
         return render(request,'index.html')
 
+class Rates(View):
+    def get(self, request):
+        return render(request,'rates.html')       
+
 class Success(View):
     def get(self, request):
         return render(request,'success.html')
