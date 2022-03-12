@@ -429,7 +429,7 @@ class AdminViewRoom(View):
                 
             elif 'BtnDelete' in request.POST:
                 print('delete button clicked')
-                Id = request.POST.get("iid-id")
+                Id = request.POST.get("cid-id")
                 students = Conference.objects.filter(cid=Id).delete()
 
         return redirect('mmkreservation:adminviewroom_view')
