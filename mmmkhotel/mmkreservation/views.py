@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
-from mmkreservation.forms import AccountForm, RoomForm, PaymentForm
+from mmkreservation.forms import AccountForm, ConferenceForm, RoomForm, PaymentForm
 
 from mmkreservation.models import Account, Admin, Payment, Rooms
 
@@ -324,12 +324,20 @@ class AdminPaymentDashboard(View):
 
         return redirect('mmkreservation:adminpayment_view')
 
+
+##INPUTANAN
 class AdminViewRoom(View):
+    def get(self, request):
+        
+        return render(request,'adminviewroom.html')
+
+#DASHBOARD
+class UserViewRoom(View):
     def get(self, request):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            conference = conference.objects.all()
+            conference = Conference.objects.all()
        
         context = {
 
@@ -338,6 +346,9 @@ class AdminViewRoom(View):
             
         }
         return render(request,'adminviewroom.html', context)
+
+
+
 
     def post(self, request):
         if request.method == 'POST':
@@ -374,12 +385,13 @@ class Conference(View):
             # try:
 
             #Name = request.POST.get("name")
-            Id = request.POST.get("id")            
-            Image = request.POST.get("image")
-            Category = request.POST.get("category")
-            Date = request.POST.get("date")
+            Cid = request.POST.get("cid")            
+            RoomN = request.POST.get("roomname")
+            RoomT = request.POST.get("roomtype")
+            Price = request.POST.get("price")
+            Pax = request.POST.get("pax")
 
-            form = Conference(id = Id, image=Image, category=Category, date=Date)
+            form = Conference(cid = Cid, roomname=RoomN, roomtype=RoomT, price=Price, pax=Pax)
             print('clicked')
             form.save()
 

@@ -16,10 +16,12 @@ urlpatterns= [
 	path('rooms', views.RoomAdd.as_view(), name="rooms_view"),
 	path('payment', views.PaymentPage.as_view(), name="payment_view"),
 
-
+##Rooms add from user to admin
 	path('adminaccounts', views.AdminAccountsDashboard.as_view(), name="adminaccounts_view"),
 	path('success', views.Success.as_view(), name="success_view"),
 	
+	##Rooms add from admin to user
 	path('adminviewroom', views.AdminViewRoom.as_view(), name="adminviewroom_view"),
-	
+	path('userviewroom', views.UserViewRoom.as_view(), name="userviewroom_view"),
+
 ]
