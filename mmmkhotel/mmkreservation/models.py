@@ -35,6 +35,9 @@ class Payment(models.Model):
     amount = models.IntegerField()
 
 class Conference(models.Model):
-    image = models.ImageField(upload_to=FilePathField, null=True, blank=True)
-    category = models.CharField(max_length=30)
-    date = models.DateField()
+    cid = models.AutoField(primary_key = True)
+    roomname = models.CharField(max_length = 100)
+    roomtype = models.CharField(max_length = 100)
+    price = models.IntegerField()
+    pax = models.CharField(max_length = 100)
+
