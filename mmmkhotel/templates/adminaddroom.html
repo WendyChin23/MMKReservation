@@ -1,167 +1,105 @@
-
 {% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>ROOM DASHBOARD</title>
-      <!-- Bootstrap CSS -->
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 
-    <!-- jQuery library -->
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-      <!----css3---->
-        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
-    
-    
-    <!--google fonts -->
-  
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  
-  <!--google material icon-->
-      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+  <title>MMK Hotel Reservation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  </head>
-  <body>
-  
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
 
-<div class="wrapper">
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
 
-        <div class="body-overlay"></div>
-    
-    <!-------------------------sidebar------------>
-         <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3><img src="{% static 'assets\img\logo1.png' %}" class="img-fluid"/><span>MMK HOTEL</span></h3>
-               {% for accountadmin in accountadmin %}
-                <p>{{accountadmin.username}}</p>
-                 {% endfor %} 
-                
-            </div>
-            <ul class="list-unstyled components">
-                <li  >
-                              <a href="{% url 'mmkreservation:admin_view' %}" class="dashboard"><i class="material-icons">dashboard</i>
-                    <span>HOME</span></a>
-                          </li>
-              
-          
-                          <li class="dropdown">
-                              <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" 
-                    class="dropdown-toggle">
-                    <i class="material-icons">aspect_ratio</i>Account</a>
-                              <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                                  <li>
-                                      <a href="{% url 'mmkreservation:adminaccounts_view' %}">User</a>
-                                  </li>
-                                  
-                                
-                              </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="{% url 'mmkreservation:adminroom_view' %}">
-                  <i class="material-icons">apps</i><span>Rooms Booked</span></a>
-                 
-              </li>
-      
-              <li class="active" >
-                <a href="{% url 'mmkreservation:adminviewroom_view' %}">
-                <i class="material-icons">apps</i><span>Add Rooms</span></a>
-               
-            </li>
-        
-                <li class="dropdown">
-                  <a href="{% url 'mmkreservation:adminpayment_view' %}">
-                  <i class="material-icons">apps</i><span>Payments</span></a>
-                 
-              </li>
-              <li class="dropdown" class="active">
-                <a href="{% url 'mmkreservation:login_view' %}">
-                <i class="material-icons">apps</i><span>Log Out</span></a>
-               
-            </li>
-        </nav>
-    
-    
-    
-    
-    <!--------page-content---------------->
-    
-    <div id="content">
-       
-       <!--top--navbar----design--------->
-       
-       <div class="top-navbar">
-          <div class="xp-topbar">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
 
-                <!-- Start XP Row -->
-                <div class="row"> 
-                    <!-- Start XP Col -->
-                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
-                        <div class="xp-menubar">
-    
-                </a>
-                            </li>
-              
-        
-              
-                        </div>
-                    </div>
-                    <!-- End XP Col -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-                </div> 
-                <!-- End XP Row -->
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
 
-            </div>
-         <div class="xp-breadcrumbbar text-center">
-                <h4 class="page-title">ROOMS</h4>  
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">User</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                  </ol>                
-            </div>
-      
-       </div>
-       
-       
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
 
-
-
-
-
+  <!-- =======================================================
+  * Template Name: Imperial - v5.7.0
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
 
 <body>
+
+
+
+
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo1.png'%}" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+      <!-- <img src="{% static 'assets\img\conference6.jpg' %}"/> -->
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
+         
+  
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#services">Services</a></li>
+            <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#portfolio">Portfolio</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#testimonials">Reviews</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
+          </li>
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
+      
+      </li>
+      <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
+        <ul>
+          <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
+          <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
+          </li>
+    </ul>
+            <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">View Rooms Available</a></li>
+                <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
+                <li><a href="#">Rates</a></li>
+                <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
+
+                </li>
+              </ul>
+
+    </div>
+  </header><!-- End Header -->
+
+
+
        <!--------main-content------------->
-       <div class="main-content" ">
-        <div class="row">
-          
-        <div class="col-md-12">
-
-
-                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addvoucher-{{grade.username_id}}" data-whatever="@mdo data-placement=" title="Update">Add Room</button>
-
-                    <div class="modal fade" id="addvoucher-{{grade.username_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
-                      <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Room</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>                              
-  <div class="card-body">
-
+   
 
     <form method="POST">
       {% csrf_token %}
@@ -207,8 +145,7 @@
         
     
       </form>
-    </div>
-   
+      </div>
     </div>
   </div>
 </div>
@@ -231,7 +168,7 @@
     <div class="table-title">
       <div class="row">
         <div class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center">
-          <h2 class="ml-lg-2">View ROOMS</h2>
+          <h2 class="ml-lg-2">View Available Rooms</h2>
         </div>
      
      
@@ -372,49 +309,71 @@
 {% endblock content %}
 
 
-<br><br><br>
-    <!-- End Members Section -->
-    <br><br><br><br><br><br>
-</main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="copyright">
-          &copy; Copyright <strong>MMK Hotel</strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-        -->
-          Designed by <a href="https://bootstrapmade.com/">MMK HOTEL</a>
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>MMK Hotel</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">MMK HOTEL</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer><!-- End Footer -->
+  </footer><!-- End Footer --
 
-<div id="preloader"></div>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
-<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
-<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
-<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="{% static 'assets/vendor/typed.js/typed.min.js'%}"></script>
-<script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
 
-<!-- Template Main JS File -->
-<script src="{% static 'assets/js/main.js'%}"></script>
 
-</body>
+  
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="{% static 'assets\js\js\jquery-3.3.1.slim.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\popper.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\bootstrap.min.js' %}"></script>
+   <script src="{% static 'assets\js\js\jquery-3.3.1.min.js' %}"></script>
+  
+  
+  <script type="text/javascript">
+        
+    $(document).ready(function(){
+      $(".xp-menubar").on('click',function(){
+        $('#sidebar').toggleClass('active');
+      $('#content').toggleClass('active');
+      });
+      
+       $(".xp-menubar,.body-overlay").on('click',function(){
+         $('#sidebar,.body-overlay').toggleClass('show-nav');
+       });
+      
+    });
+    
+</script>
+  
+  
 
-</html>
+  </body>
+  
+  </html>
+
+
+
 

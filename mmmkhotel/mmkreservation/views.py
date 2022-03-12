@@ -367,7 +367,7 @@ class UserViewRoom(View):
             elif 'BtnDelete' in request.POST:
                 print('delete button clicked')
                 Id = request.POST.get("iid-id")
-                students = Conference.objects.filter(id=Id).delete()
+                students = Conference.objects.filter(cid=Id).delete()
 
         return redirect('mmkreservation:userviewroom_view')
 
@@ -377,7 +377,19 @@ class UserViewRoom(View):
 class AdminViewRoom(View):
     
     def get(self, request):
-        return render(request, 'conference.html')
+        if 'admin' in request.session:
+            current_admin = request.session['admin']
+            accountadmin = Admin.objects.filter(username=current_admin) 
+            viewroom = Conference.objects.all()  
+            # pantawag sa html sa table
+       
+        context = {
+
+            'viewroom' : viewroom,
+            'accountadmin':accountadmin, #name that we want to use
+            
+        }
+        return render(request,'conference.html', context)
 
     def post(self, request):        
         form = ConferenceForm(request.POST)        
@@ -396,13 +408,32 @@ class AdminViewRoom(View):
             print('clicked')
             form.save()
 
-            #return HttpResponse('Student record saved!')           
+                    
             return redirect('mmkreservation:adminviewroom_view')
             # except:
             #   raise Http404
-        else:
-            print(form.errors)
-            return HttpResponse('not valid')  
+
+        if request.method == 'POST':
+            if 'BtnUpdate' in request.POST:
+                print('update button clicked')
+                Id = request.POST.get("cid-cid")                                                                                                                                                                                                                                                                                                                                            
+                Roomname = request.POST.get("roomname-roomname")
+                Roomtype = request.POST.get("roomtype-roomtype")             
+                Price = request.POST.get("price-price")
+                Pax = request.POST.get("pax-pax")
+   
+                update_rooms = Conference.objects.filter(cid=Id).update(price = Price, 
+                 roomtype=Roomtype, roomname=Roomname, pax=Pax)
+                print(update_rooms)
+                print('payment updated')
+                
+            elif 'BtnDelete' in request.POST:
+                print('delete button clicked')
+                Id = request.POST.get("iid-id")
+                students = Conference.objects.filter(cid=Id).delete()
+
+        return redirect('mmkreservation:adminviewroom_view')
+
 
 
 
