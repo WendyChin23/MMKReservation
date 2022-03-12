@@ -6,7 +6,7 @@ from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
 from mmkreservation.forms import AccountForm, ConferenceForm, RoomForm, PaymentForm
 
-from mmkreservation.models import Account, Admin, Payment, Rooms
+from mmkreservation.models import Account, Admin, Conference, Payment, Rooms
 
 
 # Create your views here.
@@ -337,43 +337,44 @@ class UserViewRoom(View):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            conference = Conference.objects.all()
+            viewroom = Conference.objects.all()  
+            # pantawag sa html sa table
        
         context = {
 
-            'conference' : conference,
+            'viewroom' : viewroom,
             'accountadmin':accountadmin, #name that we want to use
             
         }
         return render(request,'adminviewroom.html', context)
 
 
-
-
     def post(self, request):
         if request.method == 'POST':
             if 'BtnUpdate' in request.POST:
                 print('update button clicked')
-                Idn = request.POST.get("rid-rid")                                                                                                                                                                                                                                                                                                                                            
-                Image = request.POST.get("image")
-                Category = request.POST.get("category")
-                Date = request.POST.get("date")             
-                #Day = request.POST.get("day-day")
-             
-                update_conference = Conference.objects.filter(rid=Idn).update(image = Image, category = Category, date = Date)
-                print(update_conference)
-                print('conference updated')
-
+                Id = request.POST.get("cid-cid")                                                                                                                                                                                                                                                                                                                                            
+                Roomname = request.POST.get("roomname-roomname")
+                Roomtype = request.POST.get("roomtype-roomtype")             
+                Price = request.POST.get("price-price")
+                Pax = request.POST.get("pax-pax")
+   
+                update_payment = Conference.objects.filter(cid=Id).update(price = Price, 
+                 roomtype=Roomtype, roomname=Roomname, pax=Pax)
+                print(update_payment)
+                print('payment updated')
+                
             elif 'BtnDelete' in request.POST:
                 print('delete button clicked')
-                Idn = request.POST.get("iidn-idn")
-                conference = Conference.objects.filter(rid=Idn).delete()
+                Id = request.POST.get("iid-id")
+                students = Conference.objects.filter(id=Id).delete()
+
+        return redirect('mmkreservation:userviewroom_view')
 
 
-        return redirect('mmkreservation:adminviewroom_view')
 
 
-class Conference(View):
+class AdminViewRoom(View):
     
     def get(self, request):
         return render(request, 'conference.html')
@@ -396,7 +397,7 @@ class Conference(View):
             form.save()
 
             #return HttpResponse('Student record saved!')           
-            return redirect('mmkreservation:success_view')
+            return redirect('mmkreservation:adminviewroom_view')
             # except:
             #   raise Http404
         else:

@@ -1,105 +1,154 @@
+
 {% load static %}
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>ROOM DASHBOARD</title>
+      <!-- Bootstrap CSS -->
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 
-	<title>Payment Checkout Form</title>
-	      <!-- Bootstrap CSS -->
- <meta content="" name="description">
-  <meta content="" name="keywords">
- 
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
+    <!-- jQuery library -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
 
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
-</head>
-<body>
-
-
-
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo1.png'%}" alt=""></a>
-      <!-- Uncomment below if you prefer to use a text logo -->
-      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
-      <!-- <img src="{% static 'assets\img\conference6.jpg' %}"/> -->
-
-
-      <nav id="navbar" class="navbar">
-        <ul>
-            <li><a class="nav-link scrollto active" href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
-         
+    <!-- Latest compiled JavaScript -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+      <!----css3---->
+        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    
+    
+    <!--google fonts -->
   
-            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#services">Services</a></li>
-            <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#portfolio">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#testimonials">Reviews</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
-          </li>
-          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
-      
-      </li>
-      <!--<li><a class="nav-link scrollto" href="{% url 'mmkreservation:login_view' %}">Account</a></li>-->
-      <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
-        <ul>
-          <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
-          <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
-          </li>
-    </ul>
-            <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">View Rooms Available</a></li>
-                <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
-                <li><a href="#">Rates</a></li>
-                <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  
+  <!--google material icon-->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
 
-                </li>
-              </ul>
-  </header><!-- End Header -->
+  </head>
+  <body>
+  
 
-    </ul>
-    </div>
-
-
-
-
-    {% block content %} 
 <div class="wrapper">
-  <div class="payment">
-    <div class="payment-logo">
+
+        <div class="body-overlay"></div>
     
-    </div>
+    <!-------------------------sidebar------------>
+         <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="{% static 'assets\img\logo1.png' %}" class="img-fluid"/><span>MMK HOTEL</span></h3>
+               {% for accountadmin in accountadmin %}
+                <p>{{accountadmin.username}}</p>
+                 {% endfor %} 
+                
+            </div>
+            <ul class="list-unstyled components">
+                <li  class="active">
+                              <a href="{% url 'mmkreservation:admin_view' %}" class="dashboard"><i class="material-icons">dashboard</i>
+                    <span>HOME</span></a>
+                          </li>
+              
+          
+                          <li class="dropdown">
+                              <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" 
+                    class="dropdown-toggle">
+                    <i class="material-icons">aspect_ratio</i>Account</a>
+                              <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                                  <li>
+                                      <a href="{% url 'mmkreservation:adminaccounts_view' %}">User</a>
+                                  </li>
+                                  
+                                
+                              </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="{% url 'mmkreservation:adminroom_view' %}">
+                  <i class="material-icons">apps</i><span>Rooms Booked</span></a>
+                 
+              </li>
+      
+              <li class="dropdown">
+                <a href="{% url 'mmkreservation:adminviewroom_view' %}">
+                <i class="material-icons">apps</i><span>Add Rooms</span></a>
+               
+            </li>
+        
+                <li class="dropdown">
+                  <a href="{% url 'mmkreservation:adminpayment_view' %}">
+                  <i class="material-icons">apps</i><span>Payments</span></a>
+                 
+              </li>
+              <li class="dropdown" class="active">
+                <a href="{% url 'mmkreservation:login_view' %}">
+                <i class="material-icons">apps</i><span>Log Out</span></a>
+               
+            </li>
+        </nav>
     
     
+    
+    
+    <!--------page-content---------------->
+    
+    <div id="content">
+       
+       <!--top--navbar----design--------->
+       
+       <div class="top-navbar">
+          <div class="xp-topbar">
+
+                <!-- Start XP Row -->
+                <div class="row"> 
+                    <!-- Start XP Col -->
+                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
+                        <div class="xp-menubar">
+    
+                </a>
+                            </li>
+              
+        
+              
+                        </div>
+                    </div>
+                    <!-- End XP Col -->
+
+                </div> 
+                <!-- End XP Row -->
+
+            </div>
+         <div class="xp-breadcrumbbar text-center">
+                <h4 class="page-title">Account</h4>  
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">User</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                  </ol>                
+            </div>
+      
+       </div>
+       
+       
+
+
+
+
+
+
+<body>
+  
+{% block content %} 
+  <hr/>
+  <form method="POST">
+    {% csrf_token %}
+
+
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -107,21 +156,24 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>PAYMENT</h2>
+          <h2>BOOK A ROOM</h2>
           <ol>
             <li><a href="Home#hero">Home</a></li>
-            <li>Payment</li>
+            <li>Conference Room</li>
           </ol>
         </div>
-	</section><!-- End Breadcrumbs -->
-		    <div class="image" style="background: url('{% static "assets/img/hero-bg.jpg"%}')" >
 
-<br><br>
-	<div class="container">
+      </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= Members Section ======= -->
+    <div class="image" style="background: url('{% static "assets/img/hero-bg.jpg"%}')" >
+
+  <br><br><br>
+  <div class="container">
   <div class="d-flex justify-content-center h-100">
     <div class="card">
       <div class="card-header">
-        <h3>View Room</h3>
+        <h3>Book a Room</h3>
         <div class="d-flex justify-content-end social_icon">
           <span><i class="fab fa-facebook-square"></i></span>
           <span><i class="fab fa-google-plus-square"></i></span>
@@ -130,57 +182,65 @@
       </div>
       <div class="card-body">
 
-	<center><form method="POST">
-		{% csrf_token %}
 
-		<form>
- 			<span>
- 		<div class="forms">
-	<i class="fa fa-lock"></i>
-	<input type="text" class="input" id="id-Image" name="image" placeholder="image"/>
-	</span><br></div>
+      <form method="POST">
+        {% csrf_token %}
+          <div class="input-group form-group">
 
-	<span>
-		<div class="forms">
-	<i class="fa fa-lock"></i>
-	 <input type="text" class="input" id="id-Category" name="categoy" placeholder="category"/>
-	</span><br></div>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Room Name" id="roomname" name="roomname"> 
+          </div>
+
+   
+          
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Room Type"  id="roomtype" name="roomtype">
+          </div>
 
 
-	<span>
-		<div class="forms">
-	<i class="fa fa-lock"></i>
-	 <input type="text" class="input" id="id-Date" name="date" placeholder="date"/>
-		</span><br></div>
-
-		<!--<span>
-			<div class="forms">
-	<i class="fa fa-lock"></i>
-	 <input type="text" class="input" id="id-Mop" name="mop" placeholder="Enter Mode of Payment... "/>
-		</span><br>-->
-
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Price"  id="id-price" name="price">
+          </div>
 
 
 
-	<center>
-	<input type="submit" class="btn" value="Submit"/> </center>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="PAX"  id="pax" name="pax">
+          </div>
 
+
+          <div class="form-group">
+            <div class="text-center"><button class="btn float-right login_btn"  href="{% url 'mmkreservation:success_view' %}" type="submit">ADD Now</button></div>            
+
+          </div>
+          
+   {% endblock content %}       
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links" href="{% url 'mmkreservation:adminviewroom_view' %}">
+          Do not have an account?<a href="{% url 'mmkreservation:adminviewroom_view' %}">ADD</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+<br><br><br>
+    <!-- End Members Section -->
+    <br><br><br><br><br><br>
+</main><!-- End #main -->
 
-
-
- </center>
-{% endblock content %}
-	</form>
-</center>
-	
-        <br><br><br><br><br><br><br><br><br><br>
-
-<hr>
 <!-- ======= Footer ======= -->
 <footer id="footer">
   <div class="container">
@@ -201,8 +261,6 @@
       </div>
     </div>
   </div>
-  <br>
-
 </footer><!-- End Footer -->
 
 <div id="preloader"></div>
@@ -223,5 +281,4 @@
 </body>
 
 </html>
-
 

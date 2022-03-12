@@ -22,6 +22,7 @@ urlpatterns= [
 	
 	##Rooms add from admin to user
 	path('adminviewroom', views.AdminViewRoom.as_view(), name="adminviewroom_view"),
+	##Dashboard
 	path('userviewroom', views.UserViewRoom.as_view(), name="userviewroom_view"),
 
 ]

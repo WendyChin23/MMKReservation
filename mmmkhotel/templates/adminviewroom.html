@@ -1,142 +1,107 @@
 {% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>ROOM DASHBOARD</title>
-      <!-- Bootstrap CSS -->
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 
-    <!-- jQuery library -->
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-      <!----css3---->
-        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
-    
-    
-    <!--google fonts -->
+  <title>MMK Hotel Reservation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.7.0
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+
+
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo1.png'%}" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+      <!-- <img src="{% static 'assets\img\conference6.jpg' %}"/> -->
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
+         
   
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  
-  <!--google material icon-->
-      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
-
-  </head>
-  <body>
-  
-
-<div class="wrapper">
-
-        <div class="body-overlay"></div>
-    
-    <!-------------------------sidebar------------>
-         <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3><img src="{% static 'assets\img\logo1.png' %}" class="img-fluid"/><span>MMK HOTEL</span></h3>
-               {% for accountadmin in accountadmin %}
-                <p>{{accountadmin.username}}</p>
-                 {% endfor %} 
-                
-            </div>
-            <ul class="list-unstyled components">
-                <li  class="active">
-                              <a href="{% url 'mmkreservation:admin_view' %}" class="dashboard"><i class="material-icons">dashboard</i>
-                    <span>HOME</span></a>
-                          </li>
-              
-          
-                          <li class="dropdown">
-                              <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" 
-                    class="dropdown-toggle">
-                    <i class="material-icons">aspect_ratio</i>Account</a>
-                              <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                                  <li>
-                                      <a href="{% url 'mmkreservation:adminaccounts_view' %}">User</a>
-                                  </li>
-                                  
-                                
-                              </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="{% url 'mmkreservation:adminroom_view' %}">
-                    <i class="material-icons">apps</i><span>Rooms</span></a>
-                   
-                </li>
-        
-        
-                <li class="dropdown">
-                  <a href="{% url 'mmkreservation:adminpayment_view' %}">
-                  <i class="material-icons">apps</i><span>Payments</span></a>
-                 
-              </li>
-
-              <li class="dropdown">
-                <a href="{% url 'mmkreservation:adminviewroom_view' %}">
-                <i class="material-icons">apps</i><span>Room Available</span></a>
-               
-            </li>
-
-              <li class="dropdown" class="active">
-                <a href="{% url 'mmkreservation:login_view' %}">
-                <i class="material-icons">apps</i><span>Log Out</span></a>
-               
-            </li>
-        </nav>
-    
-    
-    
-    
-    <!--------page-content---------------->
-    
-    <div id="content">
-       
-       <!--top--navbar----design--------->
-       
-       <div class="top-navbar">
-          <div class="xp-topbar">
-
-                <!-- Start XP Row -->
-                <div class="row"> 
-                    <!-- Start XP Col -->
-                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
-                        <div class="xp-menubar">
-    
-                </a>
-                            </li>
-              
-        
-              
-                        </div>
-                    </div>
-                    <!-- End XP Col -->
-
-                </div> 
-                <!-- End XP Row -->
-
-            </div>
-         <div class="xp-breadcrumbbar text-center">
-                <h4 class="page-title">Rooms</h4>  
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">User</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                  </ol>                
-            </div>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#services">Services</a></li>
+            <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#portfolio">Portfolio</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#testimonials">Reviews</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
+          </li>
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
       
-       </div>
-       
-       
+      </li>
+      <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
+        <ul>
+          <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
+          <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
+          </li>
+    </ul>
+            <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">View Rooms Available</a></li>
+                <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
+                <li><a href="#">Rates</a></li>
+                <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
+
+                </li>
+              </ul>
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+
+
 
 
 
@@ -171,20 +136,20 @@
           <th>Room Name</th> 
           <th>Room Type </th> 
           <th>Price</th> 
-          <th>Person per Room</th>
+          <th>Person per room</th>
 
           <th>Action</th> 
         </tr>
       </thead>
       
-            {% for roomm in roomm %}
+            {% for viewroom in viewroom %}
             <tr>
                 <td>   
-                <td>{{roomm.rid}}</td> 
-                <td>{{roomm.roomtype}}</td> 
-                <td>{{roomm.date}}</td> 
-                <td>{{roomm.email}}</td> 
-                <td>{{roomm.day}}</td> 
+                <td>{{viewroom.cid}}</td> 
+                <td>{{viewroom.roomname}}</td> 
+                <td>{{viewroom.roomtype}}</td> 
+                <td>{{viewroom.price}}</td> 
+                <td>{{viewroom.pax}}</td> 
 
                 <td>
                   
@@ -192,53 +157,51 @@
                     {% csrf_token %}
                     <!-- {{ form.non_field_errors }}
                     {{ form.web_input }} -->
-                    <div class="container">
-                        <div class="row">
-                          <div class="card-body">
-                              <table class="table table-bordered table-striped">
-                                <thead>
-                                  <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Category</th>
-                                    <th>Date</th>
-                                    <!--<th scope="col">Words</th>
-                                    <th scope="col">Shares</th>-->
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {% for c in conference%}
-                                  <tr>
-                                    <td>{{c.id}}</td>
-                                    <td>{{c.image}}</td>
-                                    <td>{{c.category}}</td>
-                                    <td>{{c.date}}</td>
-                                      <td>
-                                        <img src="{{c.image.url}}" alt="" class="prod-size">
-                                      </td>
-                                    <td>
-                                        <img src="{%static "img/conference11.png"%}" alt="" class="prod-size">
-                                    </td>
-                                    <!--<td> A </td>
-                                    <td>Hourly Rental</td>
-                                    <!--<td>913</td>
-                                    <td>2.846</td>-->
-                                  </tr>
-                                 <!--<tr>
-                                    <th scope="row">2</th>
-                                    <td class="w-25">
-                                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg" class="img-fluid img-thumbnail" alt="Sheep">
-                                    </td>
-                                    <td>Bootstrap Grid 4 Tutorial and Examples</td>
-                                    <td>Cristina</td>
-                                    <td>1.434</td>
-                                    <td>3.417</td>
-                                  </tr>
-                                </tbody>
-                              </table>   
-                          </div>
-                        </div>
-                      </div>
+                    <input type="text" name="usernamep" value="{{viewroom.username}}" class="form-control" id="usernamep" hidden>
+                </form>
+                  
+                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{viewroom.cid}}" data-whatever="@mdo data-placement=" title="Update">UPDATE</button>
+                    
+
+                    <div class="modal fade" id="exampleModal-{{viewroom.cid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false"> 
+                     
+                      <div class="modal-dialog" style="width: 1500px; padding-top: 200px">
+                     
+                      <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>                              
+                              
+                              <div class="modal-body">
+                                <form method="POST">
+                                  {% csrf_token %}
+                                  <div class="form-group">
+                                
+                                 <label for="recipient-name" class="col-form-label">Order ID</label>
+                                <input name="cid-cid" value="{{viewroom.cid}}" subject.type="text" class="form-control" id="cid-cid" readonly>
+
+                                  <label for="recipient-name" class="col-form-label">Room Name</label>
+                                  <input type="text" name="roomname-roomname" value="{{viewroom.roomname}}" class="form-control" id="roomname-roomname">
+                        
+                                  <label for="recipient-name" class="col-form-label">Room Type</label>
+                                  <input type="text" name="roomtype-roomtype" value="{{viewroom.roomtype}}" class="form-control" id="roomtype-roomtype">
+
+                                  <label for="recipient-name" class="col-form-label">Price</label>
+                                  <input type="text" name="price-price" value = "{{viewroom.price}}" class="form-control" id="price-price" >
+                        
+
+                                  <label for="recipient-name" class="col-form-label">PAX</label>
+                                  <input type="text" name="pax-pax" value="{{viewroom.pax}}" class="form-control" id="pax-pax">
+
+
+
+                                  </div>
+                                
+                        
                                 
                               </div>
                               <div class="modal-footer">
@@ -250,15 +213,15 @@
                               </div>
                             </div>
                           </div>
-                        </div>--> 
+                        </div>
                         
                         
                         <!-- Button trigger modal -->
-  <!--<a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{roomm.rid}}"data-toggle="modal">DELETE</a>
-    </div>-->
+  <a href="button" href="#" class="btn btn-primary" data-target="#Modal-{{viewroom.cid}}"data-toggle="modal">DELETE</a>
+    </div>
                           
                          <!-- Modal HTML -->
-<!--<div id="Modal-{{roomm.rid}}" class="modal fade" data-backdrop="false">
+<div id="Modal-{{viewroom.cid}}" class="modal fade" data-backdrop="false">
 	<div class="modal-dialog modal-confirm">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -272,7 +235,7 @@
           {% csrf_token %}
 
 			<div class="modal-body">
-				<input type="text" name="iidn-idn" value = {{roomm.rid}} hidden>
+				<input type="text" name="iidn-idn" value = {{viewroom.cid}} hidden>
         Are you sure you want to delete
 			</div>
 			<div class="modal-footer">
@@ -290,10 +253,10 @@
             </table>
         </div>
         </div>
-    </div>-->
+    </div>
    
 
-  <!--</tr>-->
+  
     
 {% endblock content %}
 
