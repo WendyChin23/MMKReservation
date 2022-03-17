@@ -127,6 +127,7 @@
           <th>Room Type </th> 
           <th>Price</th> 
           <th>Person per room</th>
+          <th>Available</th> 
 
           <th>Action</th> 
         </tr>
@@ -140,6 +141,7 @@
                 <td>{{viewroom.roomtype}}</td> 
                 <td>{{viewroom.price}}</td> 
                 <td>{{viewroom.pax}}</td> 
+                <td>{{viewroom.isAvailable}}</td> 
                 <td><a href="{% url 'mmkreservation:rooms_view' %}">Click Here to Book </a></td>
 
                 <td>

@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.shortcuts import(get_object_or_404,render,HttpResponseRedirect)
 from django.core.mail import send_mail, BadHeaderError
 from mmkreservation.forms import AccountForm, ConferenceForm, RoomForm, PaymentForm
-
+from django.db.models import Q
 from mmkreservation.models import Account, Admin, Conference, Payment, Rooms
 
 
@@ -162,34 +162,6 @@ class Signup(View):
 
 
 
-
-# class Roomss(View):
-  
-
-#     def get(self, request):
-#         return render(request, 'rooms.html')
-
-#     def post(self, request):
-#         form = RoomForm(request.POST)
-#         if form.is_valid():
-#             Rid = request.POST.get("rid")
-#             Roomtype = request.POST.get("roomtype")            
-#             Date = request.POST.get("date")
-#             Email = request.POST.get("email")
-#             Day = request.POST.get("day")
-#             form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
-#             print('clicked')
-#             form.save() 
-
-
-#             return redirect('mmkreservation:adminroom_view')
-
-#         else:
-#             print(form.errors)
-#             return HttpResponse('not valid')
-
-
-
 class RoomAdd(View):
   
 
@@ -225,11 +197,13 @@ class AdminRoomsDashboard(View):
     def get(self, request):
         if 'admin' in request.session:
             current_admin = request.session['admin']
-            accountadmin = Admin.objects.filter(username=current_admin) 
-            roomm = Rooms.objects.all()
+            accountadmin = Admin.objects.filter(username=current_admin)
+            searchData = request.GET.get('search')
+            roomm = Rooms.objects.all().filter(Q(roomtype__icontains=searchData) | Q(email__icontains=searchData)
+                )
        
         context = {
-
+            'test': request.GET.urlencode(),
             'roomm' : roomm,
             'accountadmin':accountadmin, #name that we want to use
             
@@ -341,7 +315,7 @@ class UserViewRoom(View):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            viewroom = Conference.objects.all()  
+            viewroom = Conference.objects.all().filter(isAvailable=True)
             # pantawag sa html sa table
        
         context = {
@@ -384,7 +358,7 @@ class AdminViewRoom(View):
         if 'admin' in request.session:
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin) 
-            viewroom = Conference.objects.all()  
+            viewroom = Conference.objects.all()
             # pantawag sa html sa table
        
         context = {
@@ -407,8 +381,12 @@ class AdminViewRoom(View):
             RoomT = request.POST.get("roomtype")
             Price = request.POST.get("price")
             Pax = request.POST.get("pax")
+            if (request.POST.get("isAvailable") == 'on'):
+                isavailable = True
+            else:
+                isavailable = False
 
-            form = Conference(cid = Cid, roomname=RoomN, roomtype=RoomT, price=Price, pax=Pax)
+            form = Conference(cid = Cid, roomname=RoomN, roomtype=RoomT, price=Price, pax=Pax, isAvailable=isavailable)
             print('clicked')
             form.save()
 
@@ -420,14 +398,21 @@ class AdminViewRoom(View):
         if request.method == 'POST':
             if 'BtnUpdate' in request.POST:
                 print('update button clicked')
+
+
+
                 Id = request.POST.get("cid-cid")                                                                                                                                                                                                                                                                                                                                            
                 Roomname = request.POST.get("roomname-roomname")
                 Roomtype = request.POST.get("roomtype-roomtype")             
                 Price = request.POST.get("price-price")
                 Pax = request.POST.get("pax-pax")
-   
+                if (('isAvailable-isAvailable' not in request.POST)):
+                    isavailable = False
+                else:
+                    isavailable = True
+
                 update_rooms = Conference.objects.filter(cid=Id).update(price = Price, 
-                 roomtype=Roomtype, roomname=Roomname, pax=Pax)
+                 roomtype=Roomtype, roomname=Roomname, pax=Pax, isAvailable=isavailable)
                 print(update_rooms)
                 print('payment updated')
                 

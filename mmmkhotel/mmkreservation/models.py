@@ -1,3 +1,4 @@
+from xml.etree.ElementInclude import default_loader
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -40,4 +41,5 @@ class Conference(models.Model):
     roomtype = models.CharField(max_length = 100)
     price = models.IntegerField()
     pax = models.CharField(max_length = 100)
+    isAvailable = models.BooleanField(default=True)
 
