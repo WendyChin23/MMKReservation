@@ -199,12 +199,14 @@ class AdminRoomsDashboard(View):
             current_admin = request.session['admin']
             accountadmin = Admin.objects.filter(username=current_admin)
             searchData = request.GET.get('search')
-            roomm = Rooms.objects.all().filter(Q(roomtype__icontains=searchData) | Q(email__icontains=searchData)
-                )
+            if searchData != None:
+                rooms = Rooms.objects.all().filter(Q(roomtype__icontains=searchData) | Q(email__icontains=searchData))
+            else:
+                rooms = Rooms.objects.all()
        
         context = {
             'test': request.GET.urlencode(),
-            'roomm' : roomm,
+            'roomm' : rooms,
             'accountadmin':accountadmin, #name that we want to use
             
         }

@@ -37,6 +37,8 @@
   </head>
   <body>
   
+
+    {% if request.GET.search %}<div>{{ request.GET.search }}</div>{% endif %}
 <div class="wrapper">
 
         <div class="body-overlay"></div>
