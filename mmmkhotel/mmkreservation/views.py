@@ -163,20 +163,26 @@ class Signup(View):
 
 
 class RoomAdd(View):
-  
 
-    def get(self, request):
-        return render(request, 'rooms.html')
+    def get(self, request, conferenceId=None):
+        if conferenceId is None:
+            conferences = Conference.objects.all()
+        else:
+            conferences = Conference.objects.filter(cid=conferenceId)
+        return render(request, 'rooms.html', { 'conferences': conferences, 'conferenceId': conferenceId})
 
-    def post(self, request):
-        form = RoomForm(request.POST)
+    def post(self, request, conferenceId=None):
+        form = RoomForm(request.POST, )
+        print(request.POST)
+        print("sulod")
         if form.is_valid():
-            Rid = request.POST.get("rid")
-            Roomtype = request.POST.get("roomtype")            
+            Rid = request.POST.get("rid")            
             Date = request.POST.get("date")
             Email = request.POST.get("email")
             Day = request.POST.get("day")
-            form = Rooms(rid = Rid, roomtype = Roomtype, date = Date, email = Email, day = Day)
+            Cid = request.POST.get('cid')
+            conference = Conference.objects.filter(cid=conferenceId)[:1].get()
+            form = Rooms(rid = Rid, date = Date, email = Email, day = Day, cid = conference)
             print('clicked')
             form.save() 
 

@@ -15,6 +15,7 @@ urlpatterns= [
 	path('adminpayment', views.AdminPaymentDashboard.as_view(), name="adminpayment_view"),
 
 	path('rooms', views.RoomAdd.as_view(), name="rooms_view"),
+	path('rooms/<conferenceId>/', views.RoomAdd.as_view(), name="rooms_view"),
 	path('payment', views.PaymentPage.as_view(), name="payment_view"),
 
 ##Rooms add from user to admin

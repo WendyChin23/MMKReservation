@@ -21,19 +21,6 @@ class Admin(models.Model):
     username = models.CharField(max_length = 50)
     password = models.CharField(max_length = 30)
 
-class Rooms(models.Model):
-    rid = models.BigAutoField(primary_key = True)
-    roomtype = models.CharField(max_length=100)
-    date = models.DateField()
-    email = models.CharField(max_length = 50, unique = True)
-    day = models.CharField(max_length=100)
-
-class Payment(models.Model):
-    id = models.AutoField(primary_key = True)
-    name = models.CharField(max_length = 50)
-    email = models.CharField(max_length = 30)
-    mop = models.CharField(max_length = 30)
-    amount = models.IntegerField()
 
 class Conference(models.Model):
     cid = models.AutoField(primary_key = True)
@@ -42,4 +29,22 @@ class Conference(models.Model):
     price = models.IntegerField()
     pax = models.CharField(max_length = 100)
     isAvailable = models.BooleanField(default=True)
+
+
+class Rooms(models.Model):
+    rid = models.BigAutoField(primary_key = True)
+    roomtype = models.CharField(max_length=100)
+    date = models.DateField()
+    email = models.CharField(max_length = 50, unique = True)
+    day = models.CharField(max_length=100)
+    cid = models.ForeignKey(Conference,to_field='cid', on_delete=models.CASCADE)
+
+
+class Payment(models.Model):
+    id = models.AutoField(primary_key = True)
+    name = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 30)
+    mop = models.CharField(max_length = 30)
+    amount = models.IntegerField()
+
 
