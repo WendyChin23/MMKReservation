@@ -23,8 +23,7 @@ class AccountForm(forms.ModelForm):
 class RoomForm(forms.ModelForm):
 	class Meta:
 		model = Rooms
-		fields= '__all__'
-		exclude = ('roomtype',)      
+		fields= '__all__'      
 
 class PaymentForm(forms.ModelForm):
 	class Meta:

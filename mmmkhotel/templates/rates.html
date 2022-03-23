@@ -3,48 +3,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>MMK Hotel Reservation</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <!-- Favicons -->
+  <title>MMK Hotel Reservation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+      <!-- Favicons -->
+   
+      <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+      <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
 
-    <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-    <meta property="og:title" content="">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
-    <meta property="og:site_name" content="">
-    <meta property="og:description" content="">
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
 
-    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
 
-    <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
-
-    <!-- =======================================================
+  <!-- =======================================================
   * Template Name: Imperial - v5.7.0
   * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
   * Author: BootstrapMade.com
@@ -55,72 +55,72 @@
 <body>
 
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo1.png'%}" alt=""></a>
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/logo1.png'%}" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#hero">Home</a></li>
+       
 
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#services">Rates</a></li>
+          <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#portfolio">Rooms and Services</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#testimonials">Reviews</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
+        </li>
+        <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
+      
+    </li>
 
-                    <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#services">Rates</a></li>
-                    <li><a class="nav-link scrollto " href="{% url 'mmkreservation:Home_view' %}#portfolio">Rooms and Services</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#testimonials">Reviews</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#team">Team</a></li>
-                    </li>
-                    <li><a class="nav-link scrollto" href="{% url 'mmkreservation:Home_view' %}#contact">Contact</a></li>
-
-                    </li>
-
-                    <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
-                            <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
-                    </li>
-                    </ul>
-                    <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{% url 'mmkreservation:userviewroom_view' %}">View Rooms Available</a></li>
-                            <li>
-                                <a href="{% url 'mmkreservation:rates_view' %}" ">Rates</a></li>
-              <li><a href="{% url 'mmkreservation:payment_view' %} ">Payment</a></li>
+    <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
+      <ul>
+        <li><a href="{% url 'mmkreservation:login_view' %}">Login</a></li>
+        <li><a href="{% url 'mmkreservation:signup_view' %}">Sign Up</a></li>
+        </li>
+  </ul>
+          <li class="dropdown"><a href="#"><span>Rooms </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'mmkreservation:userviewroom_view' %}">View Rooms Available</a></li>
+              <li><a href="{% url 'mmkreservation:rooms_view' %}">Book a Room  </a></li>
+              <li><a href="{% url 'mmkreservation:rates_view' %}"">Rates</a></li>
+              <li><a href="{% url 'mmkreservation:payment_view' %}">Payment</a></li>
 
               </li>
             </ul>
         
    
-        <i class="bi bi-list mobile-nav-toggle "></i>
+        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
 
-  <main id="main ">
+  <main id="main">
 
   
 
     <!-- ======= Services Section ======= -->
-    <section id="services ">
-      <div class="container ">
-        <div class="row " data-aos="fade-up ">
-          <div class="col-md-12 ">
-            <h3 class="section-title ">Conference Room Price Lists</h3>
-            <div class="section-title-divider "></div>
-            <p class="section-description ">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+    <section id="services">
+      <div class="container">
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-12">
+            <h3 class="section-title">Conference Room Price Lists</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
           </div>
         </div>
 
-        <div class="row " data-aos="fade-up " data-aos-delay="200 ">
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-briefcase "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room A </a></h4>
-            <p class="service-description ">This room can accommodate up to 50 people. Rates varies on what time of the day the customer wants to book: <br><br>
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-briefcase"></i></div>
+            <h4 class="service-title"><a href="">Conference Room A </a></h4>
+            <p class="service-description">This room can accommodate up to 50 people. Rates varies on what time of the day the customer wants to book: <br><br>
                 
                 Morning (9:00AM - 12:00PM) - $50 <br>
                 
@@ -128,10 +128,10 @@
                 
                 Evening (6:00PM - 10:00PM) - $1,000 </p>
           </div>
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-card-checklist "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room B</a></h4>
-            <p class="service-description ">This room can accommodate up to 40 people. Rates varies on what time of the day the customer wants to book: 
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-card-checklist"></i></div>
+            <h4 class="service-title"><a href="">Conference Room B</a></h4>
+            <p class="service-description">This room can accommodate up to 40 people. Rates varies on what time of the day the customer wants to book: 
                 <br><br>
                 Morning (9:00AM - 12:00PM) - $20 <br>
                 
@@ -139,10 +139,10 @@
                 
                 Evening (6:00PM - 10:00PM) - $40 </p>
           </div>
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-bar-chart "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room C</a></h4>
-            <p class="service-description ">This room can accommodate up to 30 people. Rates varies on what time of the day the customer wants to book:<br><br> 
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
+            <h4 class="service-title"><a href="">Conference Room C</a></h4>
+            <p class="service-description">This room can accommodate up to 30 people. Rates varies on what time of the day the customer wants to book:<br><br> 
 
                 Morning (9:00AM - 12:00PM) - $10 <br> 
                 
@@ -150,10 +150,10 @@
                 
                 Evening (6:00PM - 10:00PM) - $20 </p>
           </div>
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-binoculars "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room C2</a></h4>
-            <p class="service-description ">This room can accommodate up to 50 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-binoculars"></i></div>
+            <h4 class="service-title"><a href="">Conference Room C2</a></h4>
+            <p class="service-description">This room can accommodate up to 50 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
 
                 Morning (9:00AM - 12:00PM) - $10 <br> 
                 
@@ -161,10 +161,10 @@
                 
                 Evening (6:00PM - 10:00PM) - $20 </p>
           </div>
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-brightness-high "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room D</a></h4>
-            <p class="service-description ">This room can accommodate up to 20 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-brightness-high"></i></div>
+            <h4 class="service-title"><a href="">Conference Room D</a></h4>
+            <p class="service-description">This room can accommodate up to 20 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
 
                 Morning (9:00AM - 12:00PM) - $3 <br> 
                 
@@ -172,10 +172,10 @@
                 
                 Evening (6:00PM - 10:00PM) – $6 </p>
           </div>
-          <div class="col-lg-4 col-md-6 service-item ">
-            <div class="service-icon "><i class="bi bi-calendar4-week "></i></div>
-            <h4 class="service-title "><a href=" ">Conference Room D2</a></h4>
-            <p class="service-description ">This room can accommodate up to 20 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
+          <div class="col-lg-4 col-md-6 service-item">
+            <div class="service-icon"><i class="bi bi-calendar4-week"></i></div>
+            <h4 class="service-title"><a href="">Conference Room D2</a></h4>
+            <p class="service-description">This room can accommodate up to 20 people. Rates varies on what time of the day the customer wants to book: <br> <br> 
 
                 Morning (9:00AM - 12:00PM) - $3 <br> 
                 
@@ -188,131 +188,131 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Subscrbe Section ======= -->
-    <section id="subscribe ">
-      <div class="container " data-aos="fade-up ">
-        <div class="row ">
-          <div class="col-md-8 ">
-            <h3 class="subscribe-title ">Subscribe For Updates</h3>
-            <p class="subscribe-text ">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+    <section id="subscribe">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-8">
+            <h3 class="subscribe-title">Subscribe For Updates</h3>
+            <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
           </div>
-          <div class="col-md-4 subscribe-btn-container ">
-            <a class="subscribe-btn " href="# ">Subscribe Now</a>
+          <div class="col-md-4 subscribe-btn-container">
+            <a class="subscribe-btn" href="#">Subscribe Now</a>
           </div>
         </div>
       </div>
     </section><!-- End Subscrbe Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio ">
-      <div class="container " data-aos="fade-up ">
-        <div class="row ">
-          <div class="col-md-12 ">
-            <h3 class="section-title ">Rooms and Services</h3>
-            <div class="section-title-divider "></div>
-            <p class="section-description ">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+    <section id="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Rooms and Services</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
           </div>
         </div>
 
-        <div class="row ">
-          <div class="col-lg-12 d-flex justify-content-center ">
-            <ul id="portfolio-flters ">
-              <li data-filter="* " class="filter-active ">All</li>
-              <li data-filter=".filter-app ">App</li>
-              <li data-filter=".filter-card ">Card</li>
-              <li data-filter=".filter-web ">Web</li>
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
             </ul>
           </div>
         </div>
 
-        <div class="row portfolio-container ">
+        <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app ">
-            <img src="{% static 'assets/img/portfolio/conference5.jpg'%} " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets/img/portfolio/conference5.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
               <h4>App 1</h4>
               <p>App</p>
-              <a href="{% static 'assets/img/portfolio/room1.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="App 1 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
+              <a href="{% static 'assets/img/portfolio/room1.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-            <img src="{% static 'assets/img/portfolio/room2.jpg'%} " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets/img/portfolio/room2.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="{% static 'assets/img/portfolio/room3.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Web 3 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
+              <a href="{% static 'assets/img/portfolio/room3.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app '%}">
-            <img src="{% static 'assets/img/portfolio/room4.jpg " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app'%}">
+            <img src="{% static 'assets/img/portfolio/room4.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
               <h4>App 2</h4>
               <p>App</p>
-              <a href="{% static 'assets/img/portfolio/conference5.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="App 2 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card ">
-            <img src="{% static 'assets/img/portfolio/room6.jpg'%} " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="{% static 'assets/img/portfolio/room7.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Card 2 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-            <img src="{% static 'assets/img/portfolio/room8.jpg'%} " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="{% static 'assets/img/portfolio/room9.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Web 2 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app ">
-            <img src="{% static 'assets/img/portfolio/room10.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="{% static 'assets/img/portfolio/room11.jpg '%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bi bi-plus"></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view '%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+              <a href="{% static 'assets/img/portfolio/conference5.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="{% static 'assets/img/portfolio/room12.jpg " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
+            <img src="{% static 'assets/img/portfolio/room6.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="{% static 'assets/img/portfolio/room7.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'assets/img/portfolio/room8.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="{% static 'assets/img/portfolio/room9.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'assets/img/portfolio/room10.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="{% static 'assets/img/portfolio/room11.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets/img/portfolio/room12.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
-              <a href="{% static 'assets/img/portfolio/room13.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Card 1 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
+              <a href="{% static 'assets/img/portfolio/room13.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card ">
-            <img src="{% static 'assets/img/portfolio/room14-8.jpg'%} " class="img-fluid " alt=" ">
-            <div class="portfolio-info ">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'assets/img/portfolio/room14-8.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
-              <a href="{% static 'assets/img/portfolio/room15.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Card 3 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
+              <a href="{% static 'assets/img/portfolio/room15.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-            <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
-            <div class="portfolio-info ">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
+            <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="{% static 'assets/img/portfolio/room16.jpg'%} " data-gallery="portfolioGallery " class="portfolio-lightbox preview-link " title="Web 3 "><i class="bi bi-plus "></i></a>
-              <a href="{% url 'mmkreservation:portfolio_view'%} " class="details-link " title="More Details "><i class="bi bi-link "></i></a>
+              <a href="{% static 'assets/img/portfolio/room16.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+              <a href="{% url 'mmkreservation:portfolio_view'%}" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
 
@@ -322,77 +322,74 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials ">
-      <div class="container " data-aos="fade-up ">
-        <div class="row ">
-          <div class="col-md-12 ">
-            <h3 class="section-title ">Conference Rooms</h3>
-            <div class="section-title-divider "></div>
-            <p class="section-description ">Erdo lide, nora porodo filece, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+    <section id="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Conference Rooms</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Erdo lide, nora porodo filece, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
           </div>
         </div>
 
-        <div class="row ">
-            <div class="col-md-3 ">
-              <div class="profile ">
-                <div class="pic "><img src="{% static 'assets/img/room3.jpg'%} " alt=" "></div>
+        <div class="row">
+            <div class="col-md-3">
+              <div class="profile">
+                <div class="pic"><img src="{% static 'assets/img/room3.jpg'%}" alt=""></div>
                 <h4>Conference Room Type Alpha</h4>
                 <span>Lawless Inc</span>
               </div>
             </div>
-            <div class="col-md-9 ">
-              <div class="quote ">
-                <b><img src="{% static 'assets/img/quote_sign_left.png'%} " alt=" "></b> 
-                Great Accomodation. Love the quality of the functional <small><img src="assets/img/quote_sign_right.png " alt=" "></small>
+            <div class="col-md-9">
+              <div class="quote">
+                <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b> 
+                Great Accomodation. Love the quality of the functional <small><img src="assets/img/quote_sign_right.png" alt=""></small>
               </div>
             </div>
           </div>
   
-          <div class="row ">
-            <div class="col-md-9 ">
-              <div class="quote ">
-                <b><img src="{% static 'assets/img/quote_sign_left.png'%} " alt=" "></b> 
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png
-                                    " alt=" "></small>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="quote">
+                <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b> 
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
               </div>
             </div>
-            <div class="col-md-3 ">
-              <div class="profile ">
-                <div class="pic "><img src="{% static 'assets/img/room5.jpg'%} " alt=" "></div>
+            <div class="col-md-3">
+              <div class="profile">
+                <div class="pic"><img src="{% static 'assets/img/room5.jpg'%}" alt=""></div>
                 <h4>Conference Room Type Beta</h4>
                 <span>Odeo Inc</span>
               </div>
             </div>
           </div>
 
-          <div class="row ">
-            <div class="col-md-3 ">
-              <div class="profile ">
-                <div class="pic "><img src="{% static 'assets/img/room6.jpg'%} " alt=" "></div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="profile">
+                <div class="pic"><img src="{% static 'assets/img/room6.jpg'%}" alt=""></div>
                 <h4>Conference Room Type Charlie</h4>
                 <span>Lawless Inc</span>
               </div>
             </div>
-            <div class="col-md-9 ">
-              <div class="quote ">
-                <b><img src="{% static 'assets/img/quote_sign_left.png'%} " alt=" "></b>
-                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="assets/img/quote_sign_right.png
-                                    " alt=" "></small>
+            <div class="col-md-9">
+              <div class="quote">
+                <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b>
+                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
               </div>
             </div>
           </div>
   
-          <div class="row ">
-            <div class="col-md-9 ">
-              <div class="quote ">
-                <b><img src="{% static 'assets/img/quote_sign_left.png'%} " alt=" "></b>
-                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png
-                                    " alt=" "></small>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="quote">
+                <b><img src="{% static 'assets/img/quote_sign_left.png'%}" alt=""></b>
+                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="assets/img/quote_sign_right.png" alt=""></small>
               </div>
             </div>
-            <div class="col-md-3 ">
-              <div class="profile ">
-                <div class="pic "><img src="{% static 'assets/img/room7.jpg'%} " alt=" "></div>
+            <div class="col-md-3">
+              <div class="profile">
+                <div class="pic"><img src="{% static 'assets/img/room7.jpg'%}" alt=""></div>
                 <h4>Conference Room Type Delta</h4>
                 <span>Odeo Inc</span>
               </div>
@@ -404,41 +401,41 @@
 
 
   <!-- ======= Footer ======= -->
-  <footer id="footer ">
-    <div class="container ">
-      <div class="row ">
-        <div class="col-md-12 ">
-          <div class="copyright ">
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
             &copy; Copyright <strong>MMK Hotel</strong>. All Rights Reserved
           </div>
-          <div class="credits ">
+          <div class="credits">
             <!--
             All the links in the footer should remain intact.
             You can delete the links only if you purchased the pro version.
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
           -->
-            Designed by <a href="https://bootstrapmade.com/ ">MMK HOTEL</a>
+            Designed by <a href="https://bootstrapmade.com/">MMK HOTEL</a>
           </div>
         </div>
       </div>
     </div>
   </footer><!-- End Footer -->
 
-  <div id="preloader "></div>
-  <a href="# " class="back-to-top d-flex align-items-center justify-content-center "><i class="bi bi-arrow-up-short "></i></a>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/aos/aos.js'%} "></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%} "></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%} "></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%} "></script>
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="{% static 'assets/vendor/typed.js/typed.min.js '%}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js '%}"></script>
+  <script src="{% static 'assets/vendor/typed.js/typed.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js '%}"></script>
+  <script src="{% static 'assets/js/main.js'%}"></script>
 
 </body>
 
